@@ -1,0 +1,30 @@
+name: Publish to NuGet
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    environment: production
+
+    steps:
+    - name: Kodu Indir
+      uses: actions/checkout@v4
+
+    - name: .NET 8 Kurulumu
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.x'
+
+    - name: Projeyi Derle ve Paketle
+      run: dotnet pack Hipcall.Sdk/Hipcall.Sdk.csproj -c Release -o out
+
+    - name: NuGet'e Gonder (Trusted Publisher)
+      run: dotnet nuget push "out/*.nupkg" --source https://api.nuget.org/v3/index.json
