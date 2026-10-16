@@ -5,7 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Hipcall.Sdk.Client.Models
+namespace Hipcall.Sdk.Deneme.Client.Models
 {
     /// <summary>
     /// Extension lists response
@@ -18,21 +18,21 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>The extension list</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Hipcall.Sdk.Client.Models.Extension>? Data { get; set; }
+        public List<global::Hipcall.Sdk.Deneme.Client.Models.Extension>? Data { get; set; }
 #nullable restore
 #else
-        public List<global::Hipcall.Sdk.Client.Models.Extension> Data { get; set; }
+        public List<global::Hipcall.Sdk.Deneme.Client.Models.Extension> Data { get; set; }
 #endif
         /// <summary>Pagination metadata for this page of results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Hipcall.Sdk.Client.Models.ExtensionListResponseSchema_meta? Meta { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.ExtensionListResponseSchema_meta? Meta { get; set; }
 #nullable restore
 #else
-        public global::Hipcall.Sdk.Client.Models.ExtensionListResponseSchema_meta Meta { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.ExtensionListResponseSchema_meta Meta { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Hipcall.Sdk.Client.Models.ExtensionListResponseSchema"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Hipcall.Sdk.Deneme.Client.Models.ExtensionListResponseSchema"/> and sets the default values.
         /// </summary>
         public ExtensionListResponseSchema()
         {
@@ -41,12 +41,12 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Hipcall.Sdk.Client.Models.ExtensionListResponseSchema"/></returns>
+        /// <returns>A <see cref="global::Hipcall.Sdk.Deneme.Client.Models.ExtensionListResponseSchema"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Hipcall.Sdk.Client.Models.ExtensionListResponseSchema CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Hipcall.Sdk.Deneme.Client.Models.ExtensionListResponseSchema CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Hipcall.Sdk.Client.Models.ExtensionListResponseSchema();
+            return new global::Hipcall.Sdk.Deneme.Client.Models.ExtensionListResponseSchema();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -56,8 +56,8 @@ namespace Hipcall.Sdk.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "data", n => { Data = n.GetCollectionOfObjectValues<global::Hipcall.Sdk.Client.Models.Extension>(global::Hipcall.Sdk.Client.Models.Extension.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "meta", n => { Meta = n.GetObjectValue<global::Hipcall.Sdk.Client.Models.ExtensionListResponseSchema_meta>(global::Hipcall.Sdk.Client.Models.ExtensionListResponseSchema_meta.CreateFromDiscriminatorValue); } },
+                { "data", n => { Data = n.GetCollectionOfObjectValues<global::Hipcall.Sdk.Deneme.Client.Models.Extension>(global::Hipcall.Sdk.Deneme.Client.Models.Extension.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "meta", n => { Meta = n.GetObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.ExtensionListResponseSchema_meta>(global::Hipcall.Sdk.Deneme.Client.Models.ExtensionListResponseSchema_meta.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,8 +67,8 @@ namespace Hipcall.Sdk.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Hipcall.Sdk.Client.Models.Extension>("data", Data);
-            writer.WriteObjectValue<global::Hipcall.Sdk.Client.Models.ExtensionListResponseSchema_meta>("meta", Meta);
+            writer.WriteCollectionOfObjectValues<global::Hipcall.Sdk.Deneme.Client.Models.Extension>("data", Data);
+            writer.WriteObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.ExtensionListResponseSchema_meta>("meta", Meta);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -5,7 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Hipcall.Sdk.Client.Models
+namespace Hipcall.Sdk.Deneme.Client.Models
 {
     /// <summary>
     /// Time-in-state totals (integer seconds) for the requester&apos;s local day. The six values always sum to the length of that local day (86400s except on DST-transition days).
@@ -28,7 +28,7 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>Seconds elapsed today with no state record at all (e.g. before the user&apos;s first-ever state change). 0 whenever a state was already set before local midnight.</summary>
         public int? TimeToUnknown { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Hipcall.Sdk.Client.Models.StateDurations"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Hipcall.Sdk.Deneme.Client.Models.StateDurations"/> and sets the default values.
         /// </summary>
         public StateDurations()
         {
@@ -37,12 +37,12 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Hipcall.Sdk.Client.Models.StateDurations"/></returns>
+        /// <returns>A <see cref="global::Hipcall.Sdk.Deneme.Client.Models.StateDurations"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Hipcall.Sdk.Client.Models.StateDurations CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Hipcall.Sdk.Deneme.Client.Models.StateDurations CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Hipcall.Sdk.Client.Models.StateDurations();
+            return new global::Hipcall.Sdk.Deneme.Client.Models.StateDurations();
         }
         /// <summary>
         /// The deserialization information for the current model

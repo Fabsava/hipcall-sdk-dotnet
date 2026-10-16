@@ -5,7 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Hipcall.Sdk.Client.Models
+namespace Hipcall.Sdk.Deneme.Client.Models
 {
     /// <summary>
     /// One ordered step in a procedure.
@@ -26,10 +26,10 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>Visibility rules. An empty list means the step is always shown.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Hipcall.Sdk.Client.Models.ProcedureStepCondition>? Conditions { get; set; }
+        public List<global::Hipcall.Sdk.Deneme.Client.Models.ProcedureStepCondition>? Conditions { get; set; }
 #nullable restore
 #else
-        public List<global::Hipcall.Sdk.Client.Models.ProcedureStepCondition> Conditions { get; set; }
+        public List<global::Hipcall.Sdk.Deneme.Client.Models.ProcedureStepCondition> Conditions { get; set; }
 #endif
         /// <summary>For decision steps, how the answer is collected: `boolean`, `select` or `multi_select`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -42,20 +42,20 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>Selectable answers. Empty unless this is a decision step.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Hipcall.Sdk.Client.Models.ProcedureStepOption>? Options { get; set; }
+        public List<global::Hipcall.Sdk.Deneme.Client.Models.ProcedureStepOption>? Options { get; set; }
 #nullable restore
 #else
-        public List<global::Hipcall.Sdk.Client.Models.ProcedureStepOption> Options { get; set; }
+        public List<global::Hipcall.Sdk.Deneme.Client.Models.ProcedureStepOption> Options { get; set; }
 #endif
         /// <summary>Position in the procedure.</summary>
         public int? Order { get; set; }
         /// <summary>Knowledge-base article backing this step, when one is linked.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Hipcall.Sdk.Client.Models.ProcedureStep_related_article? RelatedArticle { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.ProcedureStep_related_article? RelatedArticle { get; set; }
 #nullable restore
 #else
-        public global::Hipcall.Sdk.Client.Models.ProcedureStep_related_article RelatedArticle { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.ProcedureStep_related_article RelatedArticle { get; set; }
 #endif
         /// <summary>What the step asks of the agent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -82,7 +82,7 @@ namespace Hipcall.Sdk.Client.Models
         public string Uuid { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Hipcall.Sdk.Client.Models.ProcedureStep"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Hipcall.Sdk.Deneme.Client.Models.ProcedureStep"/> and sets the default values.
         /// </summary>
         public ProcedureStep()
         {
@@ -91,12 +91,12 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Hipcall.Sdk.Client.Models.ProcedureStep"/></returns>
+        /// <returns>A <see cref="global::Hipcall.Sdk.Deneme.Client.Models.ProcedureStep"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Hipcall.Sdk.Client.Models.ProcedureStep CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Hipcall.Sdk.Deneme.Client.Models.ProcedureStep CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Hipcall.Sdk.Client.Models.ProcedureStep();
+            return new global::Hipcall.Sdk.Deneme.Client.Models.ProcedureStep();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -107,11 +107,11 @@ namespace Hipcall.Sdk.Client.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "body", n => { Body = n.GetStringValue(); } },
-                { "conditions", n => { Conditions = n.GetCollectionOfObjectValues<global::Hipcall.Sdk.Client.Models.ProcedureStepCondition>(global::Hipcall.Sdk.Client.Models.ProcedureStepCondition.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "conditions", n => { Conditions = n.GetCollectionOfObjectValues<global::Hipcall.Sdk.Deneme.Client.Models.ProcedureStepCondition>(global::Hipcall.Sdk.Deneme.Client.Models.ProcedureStepCondition.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "decision_kind", n => { DecisionKind = n.GetStringValue(); } },
-                { "options", n => { Options = n.GetCollectionOfObjectValues<global::Hipcall.Sdk.Client.Models.ProcedureStepOption>(global::Hipcall.Sdk.Client.Models.ProcedureStepOption.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "options", n => { Options = n.GetCollectionOfObjectValues<global::Hipcall.Sdk.Deneme.Client.Models.ProcedureStepOption>(global::Hipcall.Sdk.Deneme.Client.Models.ProcedureStepOption.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "order", n => { Order = n.GetIntValue(); } },
-                { "related_article", n => { RelatedArticle = n.GetObjectValue<global::Hipcall.Sdk.Client.Models.ProcedureStep_related_article>(global::Hipcall.Sdk.Client.Models.ProcedureStep_related_article.CreateFromDiscriminatorValue); } },
+                { "related_article", n => { RelatedArticle = n.GetObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.ProcedureStep_related_article>(global::Hipcall.Sdk.Deneme.Client.Models.ProcedureStep_related_article.CreateFromDiscriminatorValue); } },
                 { "step_type", n => { StepType = n.GetStringValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
                 { "uuid", n => { Uuid = n.GetStringValue(); } },
@@ -125,11 +125,11 @@ namespace Hipcall.Sdk.Client.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("body", Body);
-            writer.WriteCollectionOfObjectValues<global::Hipcall.Sdk.Client.Models.ProcedureStepCondition>("conditions", Conditions);
+            writer.WriteCollectionOfObjectValues<global::Hipcall.Sdk.Deneme.Client.Models.ProcedureStepCondition>("conditions", Conditions);
             writer.WriteStringValue("decision_kind", DecisionKind);
-            writer.WriteCollectionOfObjectValues<global::Hipcall.Sdk.Client.Models.ProcedureStepOption>("options", Options);
+            writer.WriteCollectionOfObjectValues<global::Hipcall.Sdk.Deneme.Client.Models.ProcedureStepOption>("options", Options);
             writer.WriteIntValue("order", Order);
-            writer.WriteObjectValue<global::Hipcall.Sdk.Client.Models.ProcedureStep_related_article>("related_article", RelatedArticle);
+            writer.WriteObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.ProcedureStep_related_article>("related_article", RelatedArticle);
             writer.WriteStringValue("step_type", StepType);
             writer.WriteStringValue("title", Title);
             writer.WriteStringValue("uuid", Uuid);

@@ -5,7 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Hipcall.Sdk.Client.Models
+namespace Hipcall.Sdk.Deneme.Client.Models
 {
     /// <summary>
     /// Account-wide phone settings. Every key is always present; defaults are applied for accounts that never changed a setting.
@@ -31,7 +31,7 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>Calls abandoned before this many seconds are ignored in reports</summary>
         public int? ShortAbandonedThreshold { get; set; }
         /// <summary>When the wait starts being measured. `queue` excludes greeting and IVR time, which BDDK and EPDK require.</summary>
-        public global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_account_options_sla_clock? SlaClock { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_account_options_sla_clock? SlaClock { get; set; }
         /// <summary>Remove calls rejected by the denylist</summary>
         public bool? SlaExcludeDenylist { get; set; }
         /// <summary>Remove calls that arrived outside business hours</summary>
@@ -39,9 +39,9 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>Remove short abandoned calls from the denominator. ISO 18295 forbids this, so no preset sets it.</summary>
         public bool? SlaExcludeShortAbandoned { get; set; }
         /// <summary>Which inbound calls are in the service level denominator. `agent_answered` is the pre-2026 behaviour and matches no published standard, because calls nobody answered are left out.</summary>
-        public global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_account_options_sla_population? SlaPopulation { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_account_options_sla_population? SlaPopulation { get; set; }
         /// <summary>Which service level standard the account measures against. `custom` means the axes below were chosen individually.</summary>
-        public global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_account_options_sla_preset? SlaPreset { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_account_options_sla_preset? SlaPreset { get; set; }
         /// <summary>How to read `sla_threshold_seconds`. When true it means &quot;within N seconds&quot;, so a wait of exactly N still counts. When false the comparison is strict. Not user-configurable: derived from the standard, and pinned false for accounts carrying pre-2026 behaviour.</summary>
         public bool? SlaThresholdInclusive { get; set; }
         /// <summary>Service level threshold in seconds — the number the customer or regulator states (ISO 18295 60, BDDK 30, EPDK 20). Read together with `sla_threshold_inclusive`.</summary>
@@ -51,7 +51,7 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>Callback relation update window in hours</summary>
         public int? UpdateCallbackRelationsThreshold { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_account_options"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_account_options"/> and sets the default values.
         /// </summary>
         public ProfileResponseSchema_data_account_options()
         {
@@ -60,12 +60,12 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_account_options"/></returns>
+        /// <returns>A <see cref="global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_account_options"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_account_options CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_account_options CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_account_options();
+            return new global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_account_options();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -82,12 +82,12 @@ namespace Hipcall.Sdk.Client.Models
                 { "call_record_outbound", n => { CallRecordOutbound = n.GetBoolValue(); } },
                 { "service_level_threshold", n => { ServiceLevelThreshold = n.GetIntValue(); } },
                 { "short_abandoned_threshold", n => { ShortAbandonedThreshold = n.GetIntValue(); } },
-                { "sla_clock", n => { SlaClock = n.GetEnumValue<global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_account_options_sla_clock>(); } },
+                { "sla_clock", n => { SlaClock = n.GetEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_account_options_sla_clock>(); } },
                 { "sla_exclude_denylist", n => { SlaExcludeDenylist = n.GetBoolValue(); } },
                 { "sla_exclude_out_of_business_hours", n => { SlaExcludeOutOfBusinessHours = n.GetBoolValue(); } },
                 { "sla_exclude_short_abandoned", n => { SlaExcludeShortAbandoned = n.GetBoolValue(); } },
-                { "sla_population", n => { SlaPopulation = n.GetEnumValue<global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_account_options_sla_population>(); } },
-                { "sla_preset", n => { SlaPreset = n.GetEnumValue<global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_account_options_sla_preset>(); } },
+                { "sla_population", n => { SlaPopulation = n.GetEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_account_options_sla_population>(); } },
+                { "sla_preset", n => { SlaPreset = n.GetEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_account_options_sla_preset>(); } },
                 { "sla_threshold_inclusive", n => { SlaThresholdInclusive = n.GetBoolValue(); } },
                 { "sla_threshold_seconds", n => { SlaThresholdSeconds = n.GetIntValue(); } },
                 { "update_callback_relations", n => { UpdateCallbackRelations = n.GetBoolValue(); } },
@@ -108,12 +108,12 @@ namespace Hipcall.Sdk.Client.Models
             writer.WriteBoolValue("call_record_outbound", CallRecordOutbound);
             writer.WriteIntValue("service_level_threshold", ServiceLevelThreshold);
             writer.WriteIntValue("short_abandoned_threshold", ShortAbandonedThreshold);
-            writer.WriteEnumValue<global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_account_options_sla_clock>("sla_clock", SlaClock);
+            writer.WriteEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_account_options_sla_clock>("sla_clock", SlaClock);
             writer.WriteBoolValue("sla_exclude_denylist", SlaExcludeDenylist);
             writer.WriteBoolValue("sla_exclude_out_of_business_hours", SlaExcludeOutOfBusinessHours);
             writer.WriteBoolValue("sla_exclude_short_abandoned", SlaExcludeShortAbandoned);
-            writer.WriteEnumValue<global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_account_options_sla_population>("sla_population", SlaPopulation);
-            writer.WriteEnumValue<global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_account_options_sla_preset>("sla_preset", SlaPreset);
+            writer.WriteEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_account_options_sla_population>("sla_population", SlaPopulation);
+            writer.WriteEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_account_options_sla_preset>("sla_preset", SlaPreset);
             writer.WriteBoolValue("sla_threshold_inclusive", SlaThresholdInclusive);
             writer.WriteIntValue("sla_threshold_seconds", SlaThresholdSeconds);
             writer.WriteBoolValue("update_callback_relations", UpdateCallbackRelations);

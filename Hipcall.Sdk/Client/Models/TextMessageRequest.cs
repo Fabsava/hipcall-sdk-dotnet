@@ -5,7 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Hipcall.Sdk.Client.Models
+namespace Hipcall.Sdk.Deneme.Client.Models
 {
     /// <summary>
     /// Request schema for sending a text message
@@ -24,7 +24,7 @@ namespace Hipcall.Sdk.Client.Models
         public string Text { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Hipcall.Sdk.Client.Models.TextMessageRequest"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Hipcall.Sdk.Deneme.Client.Models.TextMessageRequest"/> and sets the default values.
         /// </summary>
         public TextMessageRequest()
         {
@@ -33,12 +33,12 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Hipcall.Sdk.Client.Models.TextMessageRequest"/></returns>
+        /// <returns>A <see cref="global::Hipcall.Sdk.Deneme.Client.Models.TextMessageRequest"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Hipcall.Sdk.Client.Models.TextMessageRequest CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Hipcall.Sdk.Deneme.Client.Models.TextMessageRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Hipcall.Sdk.Client.Models.TextMessageRequest();
+            return new global::Hipcall.Sdk.Deneme.Client.Models.TextMessageRequest();
         }
         /// <summary>
         /// The deserialization information for the current model

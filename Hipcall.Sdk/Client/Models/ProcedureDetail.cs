@@ -5,7 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Hipcall.Sdk.Client.Models
+namespace Hipcall.Sdk.Deneme.Client.Models
 {
     /// <summary>
     /// A published procedure with its full, ordered step list.
@@ -26,10 +26,10 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>The category this procedure is filed under. Null when uncategorised.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Hipcall.Sdk.Client.Models.ProcedureCategory? Category { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.ProcedureCategory? Category { get; set; }
 #nullable restore
 #else
-        public global::Hipcall.Sdk.Client.Models.ProcedureCategory Category { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.ProcedureCategory Category { get; set; }
 #endif
         /// <summary>Short explanation of when to run it.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -66,10 +66,10 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>Steps of the published version, in display order.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Hipcall.Sdk.Client.Models.ProcedureStep>? Steps { get; set; }
+        public List<global::Hipcall.Sdk.Deneme.Client.Models.ProcedureStep>? Steps { get; set; }
 #nullable restore
 #else
-        public List<global::Hipcall.Sdk.Client.Models.ProcedureStep> Steps { get; set; }
+        public List<global::Hipcall.Sdk.Deneme.Client.Models.ProcedureStep> Steps { get; set; }
 #endif
         /// <summary>Stable identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -82,13 +82,13 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>The published version the steps come from.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Hipcall.Sdk.Client.Models.ProcedureVersion? Version { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.ProcedureVersion? Version { get; set; }
 #nullable restore
 #else
-        public global::Hipcall.Sdk.Client.Models.ProcedureVersion Version { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.ProcedureVersion Version { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Hipcall.Sdk.Client.Models.ProcedureDetail"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Hipcall.Sdk.Deneme.Client.Models.ProcedureDetail"/> and sets the default values.
         /// </summary>
         public ProcedureDetail()
         {
@@ -97,12 +97,12 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Hipcall.Sdk.Client.Models.ProcedureDetail"/></returns>
+        /// <returns>A <see cref="global::Hipcall.Sdk.Deneme.Client.Models.ProcedureDetail"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Hipcall.Sdk.Client.Models.ProcedureDetail CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Hipcall.Sdk.Deneme.Client.Models.ProcedureDetail CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Hipcall.Sdk.Client.Models.ProcedureDetail();
+            return new global::Hipcall.Sdk.Deneme.Client.Models.ProcedureDetail();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -113,14 +113,14 @@ namespace Hipcall.Sdk.Client.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "body", n => { Body = n.GetStringValue(); } },
-                { "category", n => { Category = n.GetObjectValue<global::Hipcall.Sdk.Client.Models.ProcedureCategory>(global::Hipcall.Sdk.Client.Models.ProcedureCategory.CreateFromDiscriminatorValue); } },
+                { "category", n => { Category = n.GetObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.ProcedureCategory>(global::Hipcall.Sdk.Deneme.Client.Models.ProcedureCategory.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
-                { "steps", n => { Steps = n.GetCollectionOfObjectValues<global::Hipcall.Sdk.Client.Models.ProcedureStep>(global::Hipcall.Sdk.Client.Models.ProcedureStep.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "steps", n => { Steps = n.GetCollectionOfObjectValues<global::Hipcall.Sdk.Deneme.Client.Models.ProcedureStep>(global::Hipcall.Sdk.Deneme.Client.Models.ProcedureStep.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "uuid", n => { Uuid = n.GetStringValue(); } },
-                { "version", n => { Version = n.GetObjectValue<global::Hipcall.Sdk.Client.Models.ProcedureVersion>(global::Hipcall.Sdk.Client.Models.ProcedureVersion.CreateFromDiscriminatorValue); } },
+                { "version", n => { Version = n.GetObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.ProcedureVersion>(global::Hipcall.Sdk.Deneme.Client.Models.ProcedureVersion.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -131,14 +131,14 @@ namespace Hipcall.Sdk.Client.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("body", Body);
-            writer.WriteObjectValue<global::Hipcall.Sdk.Client.Models.ProcedureCategory>("category", Category);
+            writer.WriteObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.ProcedureCategory>("category", Category);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("slug", Slug);
             writer.WriteStringValue("status", Status);
-            writer.WriteCollectionOfObjectValues<global::Hipcall.Sdk.Client.Models.ProcedureStep>("steps", Steps);
+            writer.WriteCollectionOfObjectValues<global::Hipcall.Sdk.Deneme.Client.Models.ProcedureStep>("steps", Steps);
             writer.WriteStringValue("uuid", Uuid);
-            writer.WriteObjectValue<global::Hipcall.Sdk.Client.Models.ProcedureVersion>("version", Version);
+            writer.WriteObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.ProcedureVersion>("version", Version);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

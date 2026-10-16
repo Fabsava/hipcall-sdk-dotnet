@@ -5,7 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Hipcall.Sdk.Client.Models
+namespace Hipcall.Sdk.Deneme.Client.Models
 {
     /// <summary>
     /// POST body for recording advertising / marketing consent on a contact.`source` is not accepted from the client — every record written through thisendpoint carries `api`, because the evidence behind `agent_call` is a callrecording and an API request cannot produce one.`evidence` is mandatory and its `note` must be at least 40 characters: aconsent nobody can prove is worse than no consent at all, because the uploadgate still honours it.
@@ -14,26 +14,26 @@ namespace Hipcall.Sdk.Client.Models
     public partial class ConsentRequestSchema : IParsable
     {
         /// <summary>What is being recorded</summary>
-        public global::Hipcall.Sdk.Client.Models.ConsentRequestSchema_action? Action { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.ConsentRequestSchema_action? Action { get; set; }
         /// <summary>How consent was taken</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Hipcall.Sdk.Client.Models.ConsentRequestSchema_evidence? Evidence { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.ConsentRequestSchema_evidence? Evidence { get; set; }
 #nullable restore
 #else
-        public global::Hipcall.Sdk.Client.Models.ConsentRequestSchema_evidence Evidence { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.ConsentRequestSchema_evidence Evidence { get; set; }
 #endif
         /// <summary>When the consent lapses. Omit for consent with no end date.</summary>
         public DateTimeOffset? ExpiresAt { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Hipcall.Sdk.Client.Models.ConsentRequestSchema"/></returns>
+        /// <returns>A <see cref="global::Hipcall.Sdk.Deneme.Client.Models.ConsentRequestSchema"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Hipcall.Sdk.Client.Models.ConsentRequestSchema CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Hipcall.Sdk.Deneme.Client.Models.ConsentRequestSchema CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Hipcall.Sdk.Client.Models.ConsentRequestSchema();
+            return new global::Hipcall.Sdk.Deneme.Client.Models.ConsentRequestSchema();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -43,8 +43,8 @@ namespace Hipcall.Sdk.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { Action = n.GetEnumValue<global::Hipcall.Sdk.Client.Models.ConsentRequestSchema_action>(); } },
-                { "evidence", n => { Evidence = n.GetObjectValue<global::Hipcall.Sdk.Client.Models.ConsentRequestSchema_evidence>(global::Hipcall.Sdk.Client.Models.ConsentRequestSchema_evidence.CreateFromDiscriminatorValue); } },
+                { "action", n => { Action = n.GetEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.ConsentRequestSchema_action>(); } },
+                { "evidence", n => { Evidence = n.GetObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.ConsentRequestSchema_evidence>(global::Hipcall.Sdk.Deneme.Client.Models.ConsentRequestSchema_evidence.CreateFromDiscriminatorValue); } },
                 { "expires_at", n => { ExpiresAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -55,8 +55,8 @@ namespace Hipcall.Sdk.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Hipcall.Sdk.Client.Models.ConsentRequestSchema_action>("action", Action);
-            writer.WriteObjectValue<global::Hipcall.Sdk.Client.Models.ConsentRequestSchema_evidence>("evidence", Evidence);
+            writer.WriteEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.ConsentRequestSchema_action>("action", Action);
+            writer.WriteObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.ConsentRequestSchema_evidence>("evidence", Evidence);
             writer.WriteDateTimeOffsetValue("expires_at", ExpiresAt);
         }
     }

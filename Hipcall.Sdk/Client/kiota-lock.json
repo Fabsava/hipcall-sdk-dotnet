@@ -5,7 +5,7 @@
   "kiotaVersion": "1.36.1",
   "clientClassName": "HipcallClient",
   "typeAccessModifier": "Public",
-  "clientNamespaceName": "Hipcall.Sdk.Client",
+  "clientNamespaceName": "Hipcall.Sdk.Deneme.Client",
   "language": "CSharp",
   "usesBackingStore": false,
   "excludeBackwardCompatible": true,

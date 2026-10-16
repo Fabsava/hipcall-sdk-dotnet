@@ -5,7 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Hipcall.Sdk.Client.Models
+namespace Hipcall.Sdk.Deneme.Client.Models
 {
     /// <summary>
     /// A user of the account
@@ -26,10 +26,10 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>User&apos;s default phone number</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Hipcall.Sdk.Client.Models.User_default_number? DefaultNumber { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.User_default_number? DefaultNumber { get; set; }
 #nullable restore
 #else
-        public global::Hipcall.Sdk.Client.Models.User_default_number DefaultNumber { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.User_default_number DefaultNumber { get; set; }
 #endif
         /// <summary>Email address</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -92,7 +92,7 @@ namespace Hipcall.Sdk.Client.Models
         public string PhonePrefix { get; set; }
 #endif
         /// <summary>There are three options.- `never`:- `always`:- `offline`:</summary>
-        public global::Hipcall.Sdk.Client.Models.User_redirect? Redirect { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.User_redirect? Redirect { get; set; }
         /// <summary>redirect_number</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,7 +102,7 @@ namespace Hipcall.Sdk.Client.Models
         public string RedirectNumber { get; set; }
 #endif
         /// <summary>There are two options.- `extension`:- `external_number`:</summary>
-        public global::Hipcall.Sdk.Client.Models.User_redirect_to? RedirectTo { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.User_redirect_to? RedirectTo { get; set; }
         /// <summary>signature</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -142,9 +142,9 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>voicemail</summary>
         public bool? Voicemail { get; set; }
         /// <summary>There are three options.- `none`:- `email`:- `task`:</summary>
-        public global::Hipcall.Sdk.Client.Models.User_voicemail_action? VoicemailAction { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.User_voicemail_action? VoicemailAction { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Hipcall.Sdk.Client.Models.User"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Hipcall.Sdk.Deneme.Client.Models.User"/> and sets the default values.
         /// </summary>
         public User()
         {
@@ -153,12 +153,12 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Hipcall.Sdk.Client.Models.User"/></returns>
+        /// <returns>A <see cref="global::Hipcall.Sdk.Deneme.Client.Models.User"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Hipcall.Sdk.Client.Models.User CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Hipcall.Sdk.Deneme.Client.Models.User CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Hipcall.Sdk.Client.Models.User();
+            return new global::Hipcall.Sdk.Deneme.Client.Models.User();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -169,7 +169,7 @@ namespace Hipcall.Sdk.Client.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "avatar_url", n => { AvatarUrl = n.GetStringValue(); } },
-                { "default_number", n => { DefaultNumber = n.GetObjectValue<global::Hipcall.Sdk.Client.Models.User_default_number>(global::Hipcall.Sdk.Client.Models.User_default_number.CreateFromDiscriminatorValue); } },
+                { "default_number", n => { DefaultNumber = n.GetObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.User_default_number>(global::Hipcall.Sdk.Deneme.Client.Models.User_default_number.CreateFromDiscriminatorValue); } },
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "first_name", n => { FirstName = n.GetStringValue(); } },
                 { "full_name", n => { FullName = n.GetStringValue(); } },
@@ -179,9 +179,9 @@ namespace Hipcall.Sdk.Client.Models
                 { "owner", n => { Owner = n.GetBoolValue(); } },
                 { "phone_countries", n => { PhoneCountries = n.GetStringValue(); } },
                 { "phone_prefix", n => { PhonePrefix = n.GetStringValue(); } },
-                { "redirect", n => { Redirect = n.GetEnumValue<global::Hipcall.Sdk.Client.Models.User_redirect>(); } },
+                { "redirect", n => { Redirect = n.GetEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.User_redirect>(); } },
                 { "redirect_number", n => { RedirectNumber = n.GetStringValue(); } },
-                { "redirect_to", n => { RedirectTo = n.GetEnumValue<global::Hipcall.Sdk.Client.Models.User_redirect_to>(); } },
+                { "redirect_to", n => { RedirectTo = n.GetEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.User_redirect_to>(); } },
                 { "signature", n => { Signature = n.GetStringValue(); } },
                 { "state", n => { State = n.GetStringValue(); } },
                 { "state_changed_at", n => { StateChangedAt = n.GetDateTimeOffsetValue(); } },
@@ -189,7 +189,7 @@ namespace Hipcall.Sdk.Client.Models
                 { "timezone", n => { Timezone = n.GetStringValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
                 { "voicemail", n => { Voicemail = n.GetBoolValue(); } },
-                { "voicemail_action", n => { VoicemailAction = n.GetEnumValue<global::Hipcall.Sdk.Client.Models.User_voicemail_action>(); } },
+                { "voicemail_action", n => { VoicemailAction = n.GetEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.User_voicemail_action>(); } },
             };
         }
         /// <summary>
@@ -200,7 +200,7 @@ namespace Hipcall.Sdk.Client.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("avatar_url", AvatarUrl);
-            writer.WriteObjectValue<global::Hipcall.Sdk.Client.Models.User_default_number>("default_number", DefaultNumber);
+            writer.WriteObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.User_default_number>("default_number", DefaultNumber);
             writer.WriteStringValue("email", Email);
             writer.WriteStringValue("first_name", FirstName);
             writer.WriteStringValue("full_name", FullName);
@@ -210,9 +210,9 @@ namespace Hipcall.Sdk.Client.Models
             writer.WriteBoolValue("owner", Owner);
             writer.WriteStringValue("phone_countries", PhoneCountries);
             writer.WriteStringValue("phone_prefix", PhonePrefix);
-            writer.WriteEnumValue<global::Hipcall.Sdk.Client.Models.User_redirect>("redirect", Redirect);
+            writer.WriteEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.User_redirect>("redirect", Redirect);
             writer.WriteStringValue("redirect_number", RedirectNumber);
-            writer.WriteEnumValue<global::Hipcall.Sdk.Client.Models.User_redirect_to>("redirect_to", RedirectTo);
+            writer.WriteEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.User_redirect_to>("redirect_to", RedirectTo);
             writer.WriteStringValue("signature", Signature);
             writer.WriteStringValue("state", State);
             writer.WriteDateTimeOffsetValue("state_changed_at", StateChangedAt);
@@ -220,7 +220,7 @@ namespace Hipcall.Sdk.Client.Models
             writer.WriteStringValue("timezone", Timezone);
             writer.WriteStringValue("title", Title);
             writer.WriteBoolValue("voicemail", Voicemail);
-            writer.WriteEnumValue<global::Hipcall.Sdk.Client.Models.User_voicemail_action>("voicemail_action", VoicemailAction);
+            writer.WriteEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.User_voicemail_action>("voicemail_action", VoicemailAction);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

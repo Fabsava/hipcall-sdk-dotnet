@@ -1,4 +1,4 @@
-namespace Hipcall.Sdk.Configuration;
+namespace Hipcall.Sdk.Deneme.Configuration;
 
 /// <summary>
 /// Options for the Hipcall SDK. Bind or configure them via

@@ -5,7 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Hipcall.Sdk.Client.Models
+namespace Hipcall.Sdk.Deneme.Client.Models
 {
     /// <summary>
     /// Call disposition
@@ -34,7 +34,7 @@ namespace Hipcall.Sdk.Client.Models
         public string Description { get; set; }
 #endif
         /// <summary>Applicable call direction</summary>
-        public global::Hipcall.Sdk.Client.Models.Disposition_direction? Direction { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.Disposition_direction? Direction { get; set; }
         /// <summary>Disposition ID</summary>
         public int? Id { get; set; }
         /// <summary>Display name</summary>
@@ -48,9 +48,9 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>Display order within outcome group</summary>
         public int? Order { get; set; }
         /// <summary>Outcome category</summary>
-        public global::Hipcall.Sdk.Client.Models.Disposition_outcome? Outcome { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.Disposition_outcome? Outcome { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Hipcall.Sdk.Client.Models.Disposition"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Hipcall.Sdk.Deneme.Client.Models.Disposition"/> and sets the default values.
         /// </summary>
         public Disposition()
         {
@@ -59,12 +59,12 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Hipcall.Sdk.Client.Models.Disposition"/></returns>
+        /// <returns>A <see cref="global::Hipcall.Sdk.Deneme.Client.Models.Disposition"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Hipcall.Sdk.Client.Models.Disposition CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Hipcall.Sdk.Deneme.Client.Models.Disposition CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Hipcall.Sdk.Client.Models.Disposition();
+            return new global::Hipcall.Sdk.Deneme.Client.Models.Disposition();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,11 +77,11 @@ namespace Hipcall.Sdk.Client.Models
                 { "active", n => { Active = n.GetBoolValue(); } },
                 { "code", n => { Code = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "direction", n => { Direction = n.GetEnumValue<global::Hipcall.Sdk.Client.Models.Disposition_direction>(); } },
+                { "direction", n => { Direction = n.GetEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.Disposition_direction>(); } },
                 { "id", n => { Id = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "order", n => { Order = n.GetIntValue(); } },
-                { "outcome", n => { Outcome = n.GetEnumValue<global::Hipcall.Sdk.Client.Models.Disposition_outcome>(); } },
+                { "outcome", n => { Outcome = n.GetEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.Disposition_outcome>(); } },
             };
         }
         /// <summary>
@@ -94,11 +94,11 @@ namespace Hipcall.Sdk.Client.Models
             writer.WriteBoolValue("active", Active);
             writer.WriteStringValue("code", Code);
             writer.WriteStringValue("description", Description);
-            writer.WriteEnumValue<global::Hipcall.Sdk.Client.Models.Disposition_direction>("direction", Direction);
+            writer.WriteEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.Disposition_direction>("direction", Direction);
             writer.WriteIntValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteIntValue("order", Order);
-            writer.WriteEnumValue<global::Hipcall.Sdk.Client.Models.Disposition_outcome>("outcome", Outcome);
+            writer.WriteEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.Disposition_outcome>("outcome", Outcome);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

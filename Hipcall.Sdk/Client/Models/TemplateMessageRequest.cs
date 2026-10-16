@@ -5,7 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Hipcall.Sdk.Client.Models
+namespace Hipcall.Sdk.Deneme.Client.Models
 {
     /// <summary>
     /// Request schema for sending an approved WhatsApp template
@@ -26,10 +26,10 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>The file an image, video or document template carries in its header. Required for those templates and rejected for text ones. The URL must be publicly reachable over HTTPS and at most 16 MB; Hipcall fetches it once and keeps its own copy, so the link may expire straight afterwards. Redirects are not followed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Hipcall.Sdk.Client.Models.TemplateMessageRequest_header_media? HeaderMedia { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.TemplateMessageRequest_header_media? HeaderMedia { get; set; }
 #nullable restore
 #else
-        public global::Hipcall.Sdk.Client.Models.TemplateMessageRequest_header_media HeaderMedia { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.TemplateMessageRequest_header_media HeaderMedia { get; set; }
 #endif
         /// <summary>The approved language variant of that template.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -52,20 +52,20 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>The template&apos;s variables, keyed by name — for example `{&quot;contact.first_name&quot;: &quot;John&quot;}`. Every variable the template declares must be given a value unless it has a default. A key the template does not declare is rejected rather than ignored, so a misspelled name is reported instead of silently sending nothing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Hipcall.Sdk.Client.Models.TemplateMessageRequest_variables? Variables { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.TemplateMessageRequest_variables? Variables { get; set; }
 #nullable restore
 #else
-        public global::Hipcall.Sdk.Client.Models.TemplateMessageRequest_variables Variables { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.TemplateMessageRequest_variables Variables { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Hipcall.Sdk.Client.Models.TemplateMessageRequest"/></returns>
+        /// <returns>A <see cref="global::Hipcall.Sdk.Deneme.Client.Models.TemplateMessageRequest"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Hipcall.Sdk.Client.Models.TemplateMessageRequest CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Hipcall.Sdk.Deneme.Client.Models.TemplateMessageRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Hipcall.Sdk.Client.Models.TemplateMessageRequest();
+            return new global::Hipcall.Sdk.Deneme.Client.Models.TemplateMessageRequest();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,11 +77,11 @@ namespace Hipcall.Sdk.Client.Models
             {
                 { "conversation_id", n => { ConversationId = n.GetGuidValue(); } },
                 { "element_name", n => { ElementName = n.GetStringValue(); } },
-                { "header_media", n => { HeaderMedia = n.GetObjectValue<global::Hipcall.Sdk.Client.Models.TemplateMessageRequest_header_media>(global::Hipcall.Sdk.Client.Models.TemplateMessageRequest_header_media.CreateFromDiscriminatorValue); } },
+                { "header_media", n => { HeaderMedia = n.GetObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.TemplateMessageRequest_header_media>(global::Hipcall.Sdk.Deneme.Client.Models.TemplateMessageRequest_header_media.CreateFromDiscriminatorValue); } },
                 { "language_code", n => { LanguageCode = n.GetStringValue(); } },
                 { "opens_conversation", n => { OpensConversation = n.GetBoolValue(); } },
                 { "to", n => { To = n.GetStringValue(); } },
-                { "variables", n => { Variables = n.GetObjectValue<global::Hipcall.Sdk.Client.Models.TemplateMessageRequest_variables>(global::Hipcall.Sdk.Client.Models.TemplateMessageRequest_variables.CreateFromDiscriminatorValue); } },
+                { "variables", n => { Variables = n.GetObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.TemplateMessageRequest_variables>(global::Hipcall.Sdk.Deneme.Client.Models.TemplateMessageRequest_variables.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -93,11 +93,11 @@ namespace Hipcall.Sdk.Client.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteGuidValue("conversation_id", ConversationId);
             writer.WriteStringValue("element_name", ElementName);
-            writer.WriteObjectValue<global::Hipcall.Sdk.Client.Models.TemplateMessageRequest_header_media>("header_media", HeaderMedia);
+            writer.WriteObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.TemplateMessageRequest_header_media>("header_media", HeaderMedia);
             writer.WriteStringValue("language_code", LanguageCode);
             writer.WriteBoolValue("opens_conversation", OpensConversation);
             writer.WriteStringValue("to", To);
-            writer.WriteObjectValue<global::Hipcall.Sdk.Client.Models.TemplateMessageRequest_variables>("variables", Variables);
+            writer.WriteObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.TemplateMessageRequest_variables>("variables", Variables);
         }
     }
 }

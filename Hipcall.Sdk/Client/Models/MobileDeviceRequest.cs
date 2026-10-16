@@ -5,7 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Hipcall.Sdk.Client.Models
+namespace Hipcall.Sdk.Deneme.Client.Models
 {
     /// <summary>
     /// Registers the Hipcall mobile app on a handset. An account allows up to two devicesper user; registering a third replaces the least recently seen one.
@@ -50,9 +50,9 @@ namespace Hipcall.Sdk.Client.Models
         public string OsVersion { get; set; }
 #endif
         /// <summary>Mobile platform</summary>
-        public global::Hipcall.Sdk.Client.Models.MobileDeviceRequest_platform? Platform { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.MobileDeviceRequest_platform? Platform { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Hipcall.Sdk.Client.Models.MobileDeviceRequest"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Hipcall.Sdk.Deneme.Client.Models.MobileDeviceRequest"/> and sets the default values.
         /// </summary>
         public MobileDeviceRequest()
         {
@@ -61,12 +61,12 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Hipcall.Sdk.Client.Models.MobileDeviceRequest"/></returns>
+        /// <returns>A <see cref="global::Hipcall.Sdk.Deneme.Client.Models.MobileDeviceRequest"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Hipcall.Sdk.Client.Models.MobileDeviceRequest CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Hipcall.Sdk.Deneme.Client.Models.MobileDeviceRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Hipcall.Sdk.Client.Models.MobileDeviceRequest();
+            return new global::Hipcall.Sdk.Deneme.Client.Models.MobileDeviceRequest();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -81,7 +81,7 @@ namespace Hipcall.Sdk.Client.Models
                 { "device_id", n => { DeviceId = n.GetGuidValue(); } },
                 { "fcm_token", n => { FcmToken = n.GetStringValue(); } },
                 { "os_version", n => { OsVersion = n.GetStringValue(); } },
-                { "platform", n => { Platform = n.GetEnumValue<global::Hipcall.Sdk.Client.Models.MobileDeviceRequest_platform>(); } },
+                { "platform", n => { Platform = n.GetEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.MobileDeviceRequest_platform>(); } },
             };
         }
         /// <summary>
@@ -96,7 +96,7 @@ namespace Hipcall.Sdk.Client.Models
             writer.WriteGuidValue("device_id", DeviceId);
             writer.WriteStringValue("fcm_token", FcmToken);
             writer.WriteStringValue("os_version", OsVersion);
-            writer.WriteEnumValue<global::Hipcall.Sdk.Client.Models.MobileDeviceRequest_platform>("platform", Platform);
+            writer.WriteEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.MobileDeviceRequest_platform>("platform", Platform);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

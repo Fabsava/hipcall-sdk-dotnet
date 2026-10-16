@@ -5,7 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Hipcall.Sdk.Client.Models
+namespace Hipcall.Sdk.Deneme.Client.Models
 {
     /// <summary>
     /// A short-lived JWT plus everything a WebRTC or SIP client needs to register: theusername, realm and signalling WebSocket URL. Re-request before `expires_at`; thetoken is not refreshable.
@@ -52,7 +52,7 @@ namespace Hipcall.Sdk.Client.Models
         public string WssUrl { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Hipcall.Sdk.Client.Models.SipTokenResponse"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Hipcall.Sdk.Deneme.Client.Models.SipTokenResponse"/> and sets the default values.
         /// </summary>
         public SipTokenResponse()
         {
@@ -61,12 +61,12 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Hipcall.Sdk.Client.Models.SipTokenResponse"/></returns>
+        /// <returns>A <see cref="global::Hipcall.Sdk.Deneme.Client.Models.SipTokenResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Hipcall.Sdk.Client.Models.SipTokenResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Hipcall.Sdk.Deneme.Client.Models.SipTokenResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Hipcall.Sdk.Client.Models.SipTokenResponse();
+            return new global::Hipcall.Sdk.Deneme.Client.Models.SipTokenResponse();
         }
         /// <summary>
         /// The deserialization information for the current model

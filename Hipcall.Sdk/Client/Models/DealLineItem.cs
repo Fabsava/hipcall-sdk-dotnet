@@ -6,7 +6,7 @@ using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Hipcall.Sdk.Client.Models
+namespace Hipcall.Sdk.Deneme.Client.Models
 {
     /// <summary>
     /// A line item of a deal: a copy of a catalog product taken when it was added, or free text. Amounts are net, in the deal&apos;s currency. Added in November 2026.
@@ -19,7 +19,7 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>Number of billing periods; `null` = until cancelled</summary>
         public int? BillingCycles { get; set; }
         /// <summary>Billing frequency</summary>
-        public global::Hipcall.Sdk.Client.Models.DealLineItem_billing_frequency? BillingFrequency { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.DealLineItem_billing_frequency? BillingFrequency { get; set; }
         /// <summary>Product code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -33,11 +33,11 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>Communications tax (ÖİV) rate, percent</summary>
         public double? CommunicationsTaxRate { get; set; }
         /// <summary>Discount type</summary>
-        public global::Hipcall.Sdk.Client.Models.DealLineItem_discount_type? DiscountType { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.DealLineItem_discount_type? DiscountType { get; set; }
         /// <summary>Percent (0-100) or amount, deducted from the line total in every period</summary>
         public double? DiscountValue { get; set; }
         /// <summary>Excise duty (ÖTV) type</summary>
-        public global::Hipcall.Sdk.Client.Models.DealLineItem_excise_duty_type? ExciseDutyType { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.DealLineItem_excise_duty_type? ExciseDutyType { get; set; }
         /// <summary>Excise duty: a percent, or an amount per unit</summary>
         public double? ExciseDutyValue { get; set; }
         /// <summary>ID</summary>
@@ -83,7 +83,7 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>VAT withholding, percent of the VAT (20 = 2/10)</summary>
         public double? VatWithholdingRate { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Hipcall.Sdk.Client.Models.DealLineItem"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Hipcall.Sdk.Deneme.Client.Models.DealLineItem"/> and sets the default values.
         /// </summary>
         public DealLineItem()
         {
@@ -92,12 +92,12 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Hipcall.Sdk.Client.Models.DealLineItem"/></returns>
+        /// <returns>A <see cref="global::Hipcall.Sdk.Deneme.Client.Models.DealLineItem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Hipcall.Sdk.Client.Models.DealLineItem CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Hipcall.Sdk.Deneme.Client.Models.DealLineItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Hipcall.Sdk.Client.Models.DealLineItem();
+            return new global::Hipcall.Sdk.Deneme.Client.Models.DealLineItem();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -108,13 +108,13 @@ namespace Hipcall.Sdk.Client.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "billing_cycles", n => { BillingCycles = n.GetIntValue(); } },
-                { "billing_frequency", n => { BillingFrequency = n.GetEnumValue<global::Hipcall.Sdk.Client.Models.DealLineItem_billing_frequency>(); } },
+                { "billing_frequency", n => { BillingFrequency = n.GetEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.DealLineItem_billing_frequency>(); } },
                 { "code", n => { Code = n.GetStringValue(); } },
                 { "commissionable", n => { Commissionable = n.GetBoolValue(); } },
                 { "communications_tax_rate", n => { CommunicationsTaxRate = n.GetDoubleValue(); } },
-                { "discount_type", n => { DiscountType = n.GetEnumValue<global::Hipcall.Sdk.Client.Models.DealLineItem_discount_type>(); } },
+                { "discount_type", n => { DiscountType = n.GetEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.DealLineItem_discount_type>(); } },
                 { "discount_value", n => { DiscountValue = n.GetDoubleValue(); } },
-                { "excise_duty_type", n => { ExciseDutyType = n.GetEnumValue<global::Hipcall.Sdk.Client.Models.DealLineItem_excise_duty_type>(); } },
+                { "excise_duty_type", n => { ExciseDutyType = n.GetEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.DealLineItem_excise_duty_type>(); } },
                 { "excise_duty_value", n => { ExciseDutyValue = n.GetDoubleValue(); } },
                 { "id", n => { Id = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -138,13 +138,13 @@ namespace Hipcall.Sdk.Client.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("billing_cycles", BillingCycles);
-            writer.WriteEnumValue<global::Hipcall.Sdk.Client.Models.DealLineItem_billing_frequency>("billing_frequency", BillingFrequency);
+            writer.WriteEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.DealLineItem_billing_frequency>("billing_frequency", BillingFrequency);
             writer.WriteStringValue("code", Code);
             writer.WriteBoolValue("commissionable", Commissionable);
             writer.WriteDoubleValue("communications_tax_rate", CommunicationsTaxRate);
-            writer.WriteEnumValue<global::Hipcall.Sdk.Client.Models.DealLineItem_discount_type>("discount_type", DiscountType);
+            writer.WriteEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.DealLineItem_discount_type>("discount_type", DiscountType);
             writer.WriteDoubleValue("discount_value", DiscountValue);
-            writer.WriteEnumValue<global::Hipcall.Sdk.Client.Models.DealLineItem_excise_duty_type>("excise_duty_type", ExciseDutyType);
+            writer.WriteEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.DealLineItem_excise_duty_type>("excise_duty_type", ExciseDutyType);
             writer.WriteDoubleValue("excise_duty_value", ExciseDutyValue);
             writer.WriteIntValue("id", Id);
             writer.WriteStringValue("name", Name);

@@ -5,7 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Hipcall.Sdk.Client.Models
+namespace Hipcall.Sdk.Deneme.Client.Models
 {
     /// <summary>
     /// POST body for creating a card for a call.#3934: this used to declare a `data` envelope wrapping `CardSchema` whilerequiring `call_id` and `card` — neither of which was in its `properties`.`call_id` is a **path** parameter, not a body field, so requiring it in thebody made every valid request a 422 once the spec was enforced.Card items stay open (`additionalProperties` unset on the item schema)because the card format is extended by clients; only the envelope is strict.
@@ -16,20 +16,20 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>Card rows, rendered in order.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Hipcall.Sdk.Client.Models.CardRequestSchema_card>? Card { get; set; }
+        public List<global::Hipcall.Sdk.Deneme.Client.Models.CardRequestSchema_card>? Card { get; set; }
 #nullable restore
 #else
-        public List<global::Hipcall.Sdk.Client.Models.CardRequestSchema_card> Card { get; set; }
+        public List<global::Hipcall.Sdk.Deneme.Client.Models.CardRequestSchema_card> Card { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Hipcall.Sdk.Client.Models.CardRequestSchema"/></returns>
+        /// <returns>A <see cref="global::Hipcall.Sdk.Deneme.Client.Models.CardRequestSchema"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Hipcall.Sdk.Client.Models.CardRequestSchema CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Hipcall.Sdk.Deneme.Client.Models.CardRequestSchema CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Hipcall.Sdk.Client.Models.CardRequestSchema();
+            return new global::Hipcall.Sdk.Deneme.Client.Models.CardRequestSchema();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -39,7 +39,7 @@ namespace Hipcall.Sdk.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "card", n => { Card = n.GetCollectionOfObjectValues<global::Hipcall.Sdk.Client.Models.CardRequestSchema_card>(global::Hipcall.Sdk.Client.Models.CardRequestSchema_card.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "card", n => { Card = n.GetCollectionOfObjectValues<global::Hipcall.Sdk.Deneme.Client.Models.CardRequestSchema_card>(global::Hipcall.Sdk.Deneme.Client.Models.CardRequestSchema_card.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Hipcall.Sdk.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Hipcall.Sdk.Client.Models.CardRequestSchema_card>("card", Card);
+            writer.WriteCollectionOfObjectValues<global::Hipcall.Sdk.Deneme.Client.Models.CardRequestSchema_card>("card", Card);
         }
     }
 }

@@ -1,4 +1,4 @@
-namespace Hipcall.Sdk.Authentication;
+namespace Hipcall.Sdk.Deneme.Authentication;
 
 /// <summary>
 /// Persists the OAuth token between requests (and, in your implementation, between restarts).

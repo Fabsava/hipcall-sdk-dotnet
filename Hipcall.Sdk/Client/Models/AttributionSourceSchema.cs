@@ -5,7 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Hipcall.Sdk.Client.Models
+namespace Hipcall.Sdk.Deneme.Client.Models
 {
     /// <summary>
     /// 20-field marketing-attribution source map (HighLevel parity). Only `url` is required; the rest are optional and represent UTM params, click IDs, click cookies, and PII (`ip`, `userAgent`) that the server may drop if `consent` is false.
@@ -180,7 +180,7 @@ namespace Hipcall.Sdk.Client.Models
         public string Wbraid { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Hipcall.Sdk.Client.Models.AttributionSourceSchema"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Hipcall.Sdk.Deneme.Client.Models.AttributionSourceSchema"/> and sets the default values.
         /// </summary>
         public AttributionSourceSchema()
         {
@@ -189,12 +189,12 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Hipcall.Sdk.Client.Models.AttributionSourceSchema"/></returns>
+        /// <returns>A <see cref="global::Hipcall.Sdk.Deneme.Client.Models.AttributionSourceSchema"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Hipcall.Sdk.Client.Models.AttributionSourceSchema CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Hipcall.Sdk.Deneme.Client.Models.AttributionSourceSchema CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Hipcall.Sdk.Client.Models.AttributionSourceSchema();
+            return new global::Hipcall.Sdk.Deneme.Client.Models.AttributionSourceSchema();
         }
         /// <summary>
         /// The deserialization information for the current model

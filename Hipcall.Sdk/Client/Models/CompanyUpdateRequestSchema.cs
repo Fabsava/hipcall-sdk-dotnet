@@ -5,7 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Hipcall.Sdk.Client.Models
+namespace Hipcall.Sdk.Deneme.Client.Models
 {
     /// <summary>
     /// PATCH body for updating a company.Phones and emails are managed through `/companies/:id/phones` and`/companies/:id/emails`; sending them here is rejected with 422 naming thefield rather than silently ignored (#3934 item 13).
@@ -16,10 +16,10 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>Custom field values to set, keyed by the definition `slug`.Only the slugs you send are touched; omitted fields keep their currentvalue. Send `null` to clear a field.An unknown slug, or the slug of an inactive definition, returns `422`with the offending slug under `errors.custom_fields` — nothing iswritten. `required` is not enforced on update, so a record thatpredates the field stays editable. Discover valid slugs via`GET /api/v3/companies/custom-fields`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Hipcall.Sdk.Client.Models.CompanyUpdateRequestSchema_custom_fields? CustomFields { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.CompanyUpdateRequestSchema_custom_fields? CustomFields { get; set; }
 #nullable restore
 #else
-        public global::Hipcall.Sdk.Client.Models.CompanyUpdateRequestSchema_custom_fields CustomFields { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.CompanyUpdateRequestSchema_custom_fields CustomFields { get; set; }
 #endif
         /// <summary>Custom URL</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -30,14 +30,14 @@ namespace Hipcall.Sdk.Client.Models
         public string CustomUrl { get; set; }
 #endif
         /// <summary>Company employee-size band. A fixed enum, not an account-defined list — see `GET /api/v3/employee-sizes` for the translated labels.</summary>
-        public global::Hipcall.Sdk.Client.Models.EmployeeSize? EmployeeSize { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.EmployeeSize? EmployeeSize { get; set; }
         /// <summary>Your own identifier for this record, unique per account. Any non-emptystring, e.g. a UUID.An integer is accepted and stored as its decimal string, so `123` and`&quot;123&quot;` are the same value (#3934 item 12 - the coercion is declaredrather than silent).A blank or whitespace-only value is rejected: send `null` to clear thefield. Arrays, objects and booleans are rejected (items 10 and 11).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Hipcall.Sdk.Client.Models.CompanyUpdateRequestSchema.CompanyUpdateRequestSchema_external_id? ExternalId { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.CompanyUpdateRequestSchema.CompanyUpdateRequestSchema_external_id? ExternalId { get; set; }
 #nullable restore
 #else
-        public global::Hipcall.Sdk.Client.Models.CompanyUpdateRequestSchema.CompanyUpdateRequestSchema_external_id ExternalId { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.CompanyUpdateRequestSchema.CompanyUpdateRequestSchema_external_id ExternalId { get; set; }
 #endif
         /// <summary>Life cycle id, from `GET /api/v3/life-cycles`. Send `null` to clear; omit the key to leave unchanged.</summary>
         public int? LifeCycleId { get; set; }
@@ -72,12 +72,12 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Hipcall.Sdk.Client.Models.CompanyUpdateRequestSchema"/></returns>
+        /// <returns>A <see cref="global::Hipcall.Sdk.Deneme.Client.Models.CompanyUpdateRequestSchema"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Hipcall.Sdk.Client.Models.CompanyUpdateRequestSchema CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Hipcall.Sdk.Deneme.Client.Models.CompanyUpdateRequestSchema CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Hipcall.Sdk.Client.Models.CompanyUpdateRequestSchema();
+            return new global::Hipcall.Sdk.Deneme.Client.Models.CompanyUpdateRequestSchema();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -87,10 +87,10 @@ namespace Hipcall.Sdk.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "custom_fields", n => { CustomFields = n.GetObjectValue<global::Hipcall.Sdk.Client.Models.CompanyUpdateRequestSchema_custom_fields>(global::Hipcall.Sdk.Client.Models.CompanyUpdateRequestSchema_custom_fields.CreateFromDiscriminatorValue); } },
+                { "custom_fields", n => { CustomFields = n.GetObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.CompanyUpdateRequestSchema_custom_fields>(global::Hipcall.Sdk.Deneme.Client.Models.CompanyUpdateRequestSchema_custom_fields.CreateFromDiscriminatorValue); } },
                 { "custom_url", n => { CustomUrl = n.GetStringValue(); } },
-                { "employee_size", n => { EmployeeSize = n.GetEnumValue<global::Hipcall.Sdk.Client.Models.EmployeeSize>(); } },
-                { "external_id", n => { ExternalId = n.GetObjectValue<global::Hipcall.Sdk.Client.Models.CompanyUpdateRequestSchema.CompanyUpdateRequestSchema_external_id>(global::Hipcall.Sdk.Client.Models.CompanyUpdateRequestSchema.CompanyUpdateRequestSchema_external_id.CreateFromDiscriminatorValue); } },
+                { "employee_size", n => { EmployeeSize = n.GetEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.EmployeeSize>(); } },
+                { "external_id", n => { ExternalId = n.GetObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.CompanyUpdateRequestSchema.CompanyUpdateRequestSchema_external_id>(global::Hipcall.Sdk.Deneme.Client.Models.CompanyUpdateRequestSchema.CompanyUpdateRequestSchema_external_id.CreateFromDiscriminatorValue); } },
                 { "life_cycle_id", n => { LifeCycleId = n.GetIntValue(); } },
                 { "linkedin_url", n => { LinkedinUrl = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -106,10 +106,10 @@ namespace Hipcall.Sdk.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Hipcall.Sdk.Client.Models.CompanyUpdateRequestSchema_custom_fields>("custom_fields", CustomFields);
+            writer.WriteObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.CompanyUpdateRequestSchema_custom_fields>("custom_fields", CustomFields);
             writer.WriteStringValue("custom_url", CustomUrl);
-            writer.WriteEnumValue<global::Hipcall.Sdk.Client.Models.EmployeeSize>("employee_size", EmployeeSize);
-            writer.WriteObjectValue<global::Hipcall.Sdk.Client.Models.CompanyUpdateRequestSchema.CompanyUpdateRequestSchema_external_id>("external_id", ExternalId);
+            writer.WriteEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.EmployeeSize>("employee_size", EmployeeSize);
+            writer.WriteObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.CompanyUpdateRequestSchema.CompanyUpdateRequestSchema_external_id>("external_id", ExternalId);
             writer.WriteIntValue("life_cycle_id", LifeCycleId);
             writer.WriteStringValue("linkedin_url", LinkedinUrl);
             writer.WriteStringValue("name", Name);
@@ -136,13 +136,13 @@ namespace Hipcall.Sdk.Client.Models
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
             /// </summary>
-            /// <returns>A <see cref="global::Hipcall.Sdk.Client.Models.CompanyUpdateRequestSchema.CompanyUpdateRequestSchema_external_id"/></returns>
+            /// <returns>A <see cref="global::Hipcall.Sdk.Deneme.Client.Models.CompanyUpdateRequestSchema.CompanyUpdateRequestSchema_external_id"/></returns>
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Hipcall.Sdk.Client.Models.CompanyUpdateRequestSchema.CompanyUpdateRequestSchema_external_id CreateFromDiscriminatorValue(IParseNode parseNode)
+            public static global::Hipcall.Sdk.Deneme.Client.Models.CompanyUpdateRequestSchema.CompanyUpdateRequestSchema_external_id CreateFromDiscriminatorValue(IParseNode parseNode)
             {
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Hipcall.Sdk.Client.Models.CompanyUpdateRequestSchema.CompanyUpdateRequestSchema_external_id();
+                var result = new global::Hipcall.Sdk.Deneme.Client.Models.CompanyUpdateRequestSchema.CompanyUpdateRequestSchema_external_id();
                 if(parseNode.GetIntValue() is int integerValue)
                 {
                     result.Integer = integerValue;

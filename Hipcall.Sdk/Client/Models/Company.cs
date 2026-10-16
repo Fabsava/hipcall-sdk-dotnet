@@ -5,7 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Hipcall.Sdk.Client.Models
+namespace Hipcall.Sdk.Deneme.Client.Models
 {
     /// <summary>
     /// A Company
@@ -18,31 +18,31 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>Associated contacts</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Hipcall.Sdk.Client.Models.Company_contacts>? Contacts { get; set; }
+        public List<global::Hipcall.Sdk.Deneme.Client.Models.Company_contacts>? Contacts { get; set; }
 #nullable restore
 #else
-        public List<global::Hipcall.Sdk.Client.Models.Company_contacts> Contacts { get; set; }
+        public List<global::Hipcall.Sdk.Deneme.Client.Models.Company_contacts> Contacts { get; set; }
 #endif
         /// <summary>Account-defined custom field values, keyed by the definition `slug`.Every active definition is present; fields with no stored value renderas `null`. Values of inactive definitions are omitted entirely.Value types follow the definition&apos;s `field_type`: `text` and`dropdown` are strings, `boolean` is a boolean, `number` is an integeror a decimal string, `date` is `YYYY-MM-DD`, `datetime` is ISO 8601,`multi_select` is an array of strings.Call `GET /api/v3/companies/custom-fields` to discover which slugsexist and what each one accepts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Hipcall.Sdk.Client.Models.Company_custom_fields? CustomFields { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.Company_custom_fields? CustomFields { get; set; }
 #nullable restore
 #else
-        public global::Hipcall.Sdk.Client.Models.Company_custom_fields CustomFields { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.Company_custom_fields CustomFields { get; set; }
 #endif
         /// <summary>Custom URL</summary>
         public int? CustomUrl { get; set; }
         /// <summary>Contact email list</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Hipcall.Sdk.Client.Models.Email>? Emails { get; set; }
+        public List<global::Hipcall.Sdk.Deneme.Client.Models.Email>? Emails { get; set; }
 #nullable restore
 #else
-        public List<global::Hipcall.Sdk.Client.Models.Email> Emails { get; set; }
+        public List<global::Hipcall.Sdk.Deneme.Client.Models.Email> Emails { get; set; }
 #endif
         /// <summary>The company&apos;s employee-size band. Null when unset.</summary>
-        public global::Hipcall.Sdk.Client.Models.EmployeeSize? EmployeeSize { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.EmployeeSize? EmployeeSize { get; set; }
         /// <summary>Customer-supplied external identifier (unique per account).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -56,10 +56,10 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>Where this record sits in the account&apos;s life cycle vocabulary. Null when unset.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Hipcall.Sdk.Client.Models.NamedAttribute? LifeCycle { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.NamedAttribute? LifeCycle { get; set; }
 #nullable restore
 #else
-        public global::Hipcall.Sdk.Client.Models.NamedAttribute LifeCycle { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.NamedAttribute LifeCycle { get; set; }
 #endif
         /// <summary>Linkedin URL</summary>
         public int? LinkedinUrl { get; set; }
@@ -74,39 +74,39 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>Contact phone number list</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Hipcall.Sdk.Client.Models.Phone>? Phones { get; set; }
+        public List<global::Hipcall.Sdk.Deneme.Client.Models.Phone>? Phones { get; set; }
 #nullable restore
 #else
-        public List<global::Hipcall.Sdk.Client.Models.Phone> Phones { get; set; }
+        public List<global::Hipcall.Sdk.Deneme.Client.Models.Phone> Phones { get; set; }
 #endif
         /// <summary>The record&apos;s sector, from the account&apos;s sector vocabulary. Null when unset.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Hipcall.Sdk.Client.Models.NamedAttribute? Sector { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.NamedAttribute? Sector { get; set; }
 #nullable restore
 #else
-        public global::Hipcall.Sdk.Client.Models.NamedAttribute Sector { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.NamedAttribute Sector { get; set; }
 #endif
         /// <summary>How the record was acquired, from the account&apos;s traction channel vocabulary. Null when unset.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Hipcall.Sdk.Client.Models.NamedAttribute? Source { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.NamedAttribute? Source { get; set; }
 #nullable restore
 #else
-        public global::Hipcall.Sdk.Client.Models.NamedAttribute Source { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.NamedAttribute Source { get; set; }
 #endif
         /// <summary>The user assigned to this company</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Hipcall.Sdk.Client.Models.Company_user? User { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.Company_user? User { get; set; }
 #nullable restore
 #else
-        public global::Hipcall.Sdk.Client.Models.Company_user User { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.Company_user User { get; set; }
 #endif
         /// <summary>Website URL</summary>
         public int? WebsiteUrl { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Hipcall.Sdk.Client.Models.Company"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Hipcall.Sdk.Deneme.Client.Models.Company"/> and sets the default values.
         /// </summary>
         public Company()
         {
@@ -115,12 +115,12 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Hipcall.Sdk.Client.Models.Company"/></returns>
+        /// <returns>A <see cref="global::Hipcall.Sdk.Deneme.Client.Models.Company"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Hipcall.Sdk.Client.Models.Company CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Hipcall.Sdk.Deneme.Client.Models.Company CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Hipcall.Sdk.Client.Models.Company();
+            return new global::Hipcall.Sdk.Deneme.Client.Models.Company();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -130,20 +130,20 @@ namespace Hipcall.Sdk.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "contacts", n => { Contacts = n.GetCollectionOfObjectValues<global::Hipcall.Sdk.Client.Models.Company_contacts>(global::Hipcall.Sdk.Client.Models.Company_contacts.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "custom_fields", n => { CustomFields = n.GetObjectValue<global::Hipcall.Sdk.Client.Models.Company_custom_fields>(global::Hipcall.Sdk.Client.Models.Company_custom_fields.CreateFromDiscriminatorValue); } },
+                { "contacts", n => { Contacts = n.GetCollectionOfObjectValues<global::Hipcall.Sdk.Deneme.Client.Models.Company_contacts>(global::Hipcall.Sdk.Deneme.Client.Models.Company_contacts.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "custom_fields", n => { CustomFields = n.GetObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.Company_custom_fields>(global::Hipcall.Sdk.Deneme.Client.Models.Company_custom_fields.CreateFromDiscriminatorValue); } },
                 { "custom_url", n => { CustomUrl = n.GetIntValue(); } },
-                { "emails", n => { Emails = n.GetCollectionOfObjectValues<global::Hipcall.Sdk.Client.Models.Email>(global::Hipcall.Sdk.Client.Models.Email.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "employee_size", n => { EmployeeSize = n.GetEnumValue<global::Hipcall.Sdk.Client.Models.EmployeeSize>(); } },
+                { "emails", n => { Emails = n.GetCollectionOfObjectValues<global::Hipcall.Sdk.Deneme.Client.Models.Email>(global::Hipcall.Sdk.Deneme.Client.Models.Email.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "employee_size", n => { EmployeeSize = n.GetEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.EmployeeSize>(); } },
                 { "external_id", n => { ExternalId = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetIntValue(); } },
-                { "life_cycle", n => { LifeCycle = n.GetObjectValue<global::Hipcall.Sdk.Client.Models.NamedAttribute>(global::Hipcall.Sdk.Client.Models.NamedAttribute.CreateFromDiscriminatorValue); } },
+                { "life_cycle", n => { LifeCycle = n.GetObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.NamedAttribute>(global::Hipcall.Sdk.Deneme.Client.Models.NamedAttribute.CreateFromDiscriminatorValue); } },
                 { "linkedin_url", n => { LinkedinUrl = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "phones", n => { Phones = n.GetCollectionOfObjectValues<global::Hipcall.Sdk.Client.Models.Phone>(global::Hipcall.Sdk.Client.Models.Phone.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "sector", n => { Sector = n.GetObjectValue<global::Hipcall.Sdk.Client.Models.NamedAttribute>(global::Hipcall.Sdk.Client.Models.NamedAttribute.CreateFromDiscriminatorValue); } },
-                { "source", n => { Source = n.GetObjectValue<global::Hipcall.Sdk.Client.Models.NamedAttribute>(global::Hipcall.Sdk.Client.Models.NamedAttribute.CreateFromDiscriminatorValue); } },
-                { "user", n => { User = n.GetObjectValue<global::Hipcall.Sdk.Client.Models.Company_user>(global::Hipcall.Sdk.Client.Models.Company_user.CreateFromDiscriminatorValue); } },
+                { "phones", n => { Phones = n.GetCollectionOfObjectValues<global::Hipcall.Sdk.Deneme.Client.Models.Phone>(global::Hipcall.Sdk.Deneme.Client.Models.Phone.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "sector", n => { Sector = n.GetObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.NamedAttribute>(global::Hipcall.Sdk.Deneme.Client.Models.NamedAttribute.CreateFromDiscriminatorValue); } },
+                { "source", n => { Source = n.GetObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.NamedAttribute>(global::Hipcall.Sdk.Deneme.Client.Models.NamedAttribute.CreateFromDiscriminatorValue); } },
+                { "user", n => { User = n.GetObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.Company_user>(global::Hipcall.Sdk.Deneme.Client.Models.Company_user.CreateFromDiscriminatorValue); } },
                 { "website_url", n => { WebsiteUrl = n.GetIntValue(); } },
             };
         }
@@ -154,20 +154,20 @@ namespace Hipcall.Sdk.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Hipcall.Sdk.Client.Models.Company_contacts>("contacts", Contacts);
-            writer.WriteObjectValue<global::Hipcall.Sdk.Client.Models.Company_custom_fields>("custom_fields", CustomFields);
+            writer.WriteCollectionOfObjectValues<global::Hipcall.Sdk.Deneme.Client.Models.Company_contacts>("contacts", Contacts);
+            writer.WriteObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.Company_custom_fields>("custom_fields", CustomFields);
             writer.WriteIntValue("custom_url", CustomUrl);
-            writer.WriteCollectionOfObjectValues<global::Hipcall.Sdk.Client.Models.Email>("emails", Emails);
-            writer.WriteEnumValue<global::Hipcall.Sdk.Client.Models.EmployeeSize>("employee_size", EmployeeSize);
+            writer.WriteCollectionOfObjectValues<global::Hipcall.Sdk.Deneme.Client.Models.Email>("emails", Emails);
+            writer.WriteEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.EmployeeSize>("employee_size", EmployeeSize);
             writer.WriteStringValue("external_id", ExternalId);
             writer.WriteIntValue("id", Id);
-            writer.WriteObjectValue<global::Hipcall.Sdk.Client.Models.NamedAttribute>("life_cycle", LifeCycle);
+            writer.WriteObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.NamedAttribute>("life_cycle", LifeCycle);
             writer.WriteIntValue("linkedin_url", LinkedinUrl);
             writer.WriteStringValue("name", Name);
-            writer.WriteCollectionOfObjectValues<global::Hipcall.Sdk.Client.Models.Phone>("phones", Phones);
-            writer.WriteObjectValue<global::Hipcall.Sdk.Client.Models.NamedAttribute>("sector", Sector);
-            writer.WriteObjectValue<global::Hipcall.Sdk.Client.Models.NamedAttribute>("source", Source);
-            writer.WriteObjectValue<global::Hipcall.Sdk.Client.Models.Company_user>("user", User);
+            writer.WriteCollectionOfObjectValues<global::Hipcall.Sdk.Deneme.Client.Models.Phone>("phones", Phones);
+            writer.WriteObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.NamedAttribute>("sector", Sector);
+            writer.WriteObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.NamedAttribute>("source", Source);
+            writer.WriteObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.Company_user>("user", User);
             writer.WriteIntValue("website_url", WebsiteUrl);
             writer.WriteAdditionalData(AdditionalData);
         }

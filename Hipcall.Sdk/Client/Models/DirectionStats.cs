@@ -5,7 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Hipcall.Sdk.Client.Models
+namespace Hipcall.Sdk.Deneme.Client.Models
 {
     /// <summary>
     /// Per-direction call aggregates (count, total_duration, avg_duration in seconds). Durations are talk time, measured from the moment the agent came on the line — not the whole call.
@@ -22,7 +22,7 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>Talk time across the counted calls, in seconds: from the bridge (inbound) or from the callee picking up (outbound) until hangup. Announcement, IVR and queue wait are excluded; a call that never connected contributes 0.</summary>
         public int? TotalDuration { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Hipcall.Sdk.Client.Models.DirectionStats"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Hipcall.Sdk.Deneme.Client.Models.DirectionStats"/> and sets the default values.
         /// </summary>
         public DirectionStats()
         {
@@ -31,12 +31,12 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Hipcall.Sdk.Client.Models.DirectionStats"/></returns>
+        /// <returns>A <see cref="global::Hipcall.Sdk.Deneme.Client.Models.DirectionStats"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Hipcall.Sdk.Client.Models.DirectionStats CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Hipcall.Sdk.Deneme.Client.Models.DirectionStats CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Hipcall.Sdk.Client.Models.DirectionStats();
+            return new global::Hipcall.Sdk.Deneme.Client.Models.DirectionStats();
         }
         /// <summary>
         /// The deserialization information for the current model

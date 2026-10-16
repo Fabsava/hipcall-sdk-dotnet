@@ -5,7 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Hipcall.Sdk.Client.Models
+namespace Hipcall.Sdk.Deneme.Client.Models
 {
     /// <summary>
     /// POST body for creating phone number(s). Each phone number must include the number and country code.
@@ -18,13 +18,13 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>Array of phone numbers to add. Each phone will be validated and normalized to E.164 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Hipcall.Sdk.Client.Models.PhoneRequest_phones>? Phones { get; set; }
+        public List<global::Hipcall.Sdk.Deneme.Client.Models.PhoneRequest_phones>? Phones { get; set; }
 #nullable restore
 #else
-        public List<global::Hipcall.Sdk.Client.Models.PhoneRequest_phones> Phones { get; set; }
+        public List<global::Hipcall.Sdk.Deneme.Client.Models.PhoneRequest_phones> Phones { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Hipcall.Sdk.Client.Models.PhoneRequest"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Hipcall.Sdk.Deneme.Client.Models.PhoneRequest"/> and sets the default values.
         /// </summary>
         public PhoneRequest()
         {
@@ -33,12 +33,12 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Hipcall.Sdk.Client.Models.PhoneRequest"/></returns>
+        /// <returns>A <see cref="global::Hipcall.Sdk.Deneme.Client.Models.PhoneRequest"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Hipcall.Sdk.Client.Models.PhoneRequest CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Hipcall.Sdk.Deneme.Client.Models.PhoneRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Hipcall.Sdk.Client.Models.PhoneRequest();
+            return new global::Hipcall.Sdk.Deneme.Client.Models.PhoneRequest();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -48,7 +48,7 @@ namespace Hipcall.Sdk.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "phones", n => { Phones = n.GetCollectionOfObjectValues<global::Hipcall.Sdk.Client.Models.PhoneRequest_phones>(global::Hipcall.Sdk.Client.Models.PhoneRequest_phones.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "phones", n => { Phones = n.GetCollectionOfObjectValues<global::Hipcall.Sdk.Deneme.Client.Models.PhoneRequest_phones>(global::Hipcall.Sdk.Deneme.Client.Models.PhoneRequest_phones.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -58,7 +58,7 @@ namespace Hipcall.Sdk.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Hipcall.Sdk.Client.Models.PhoneRequest_phones>("phones", Phones);
+            writer.WriteCollectionOfObjectValues<global::Hipcall.Sdk.Deneme.Client.Models.PhoneRequest_phones>("phones", Phones);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

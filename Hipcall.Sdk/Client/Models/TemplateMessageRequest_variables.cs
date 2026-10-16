@@ -5,7 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Hipcall.Sdk.Client.Models
+namespace Hipcall.Sdk.Deneme.Client.Models
 {
     /// <summary>
     /// The template&apos;s variables, keyed by name — for example `{&quot;contact.first_name&quot;: &quot;John&quot;}`. Every variable the template declares must be given a value unless it has a default. A key the template does not declare is rejected rather than ignored, so a misspelled name is reported instead of silently sending nothing.
@@ -16,7 +16,7 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Hipcall.Sdk.Client.Models.TemplateMessageRequest_variables"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Hipcall.Sdk.Deneme.Client.Models.TemplateMessageRequest_variables"/> and sets the default values.
         /// </summary>
         public TemplateMessageRequest_variables()
         {
@@ -25,12 +25,12 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Hipcall.Sdk.Client.Models.TemplateMessageRequest_variables"/></returns>
+        /// <returns>A <see cref="global::Hipcall.Sdk.Deneme.Client.Models.TemplateMessageRequest_variables"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Hipcall.Sdk.Client.Models.TemplateMessageRequest_variables CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Hipcall.Sdk.Deneme.Client.Models.TemplateMessageRequest_variables CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Hipcall.Sdk.Client.Models.TemplateMessageRequest_variables();
+            return new global::Hipcall.Sdk.Deneme.Client.Models.TemplateMessageRequest_variables();
         }
         /// <summary>
         /// The deserialization information for the current model

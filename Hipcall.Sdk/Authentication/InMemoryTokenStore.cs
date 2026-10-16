@@ -1,4 +1,4 @@
-namespace Hipcall.Sdk.Authentication;
+namespace Hipcall.Sdk.Deneme.Authentication;
 
 /// <summary>
 /// Keeps the token in process memory only. Meant for first tests; the token is lost on restart.

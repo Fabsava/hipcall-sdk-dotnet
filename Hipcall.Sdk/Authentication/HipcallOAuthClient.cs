@@ -1,8 +1,8 @@
 using System.Net.Http.Json;
-using Hipcall.Sdk.Configuration;
+using Hipcall.Sdk.Deneme.Configuration;
 using Microsoft.Extensions.Options;
 
-namespace Hipcall.Sdk.Authentication;
+namespace Hipcall.Sdk.Deneme.Authentication;
 
 /// <summary>
 /// Minimal client for the Hipcall OAuth2 token endpoint. Client credentials come from

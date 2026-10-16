@@ -5,7 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Hipcall.Sdk.Client.Models
+namespace Hipcall.Sdk.Deneme.Client.Models
 {
     /// <summary>
     /// POST body for creating a contact
@@ -20,10 +20,10 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>Custom field values to set, keyed by the definition `slug`.Only the slugs you send are touched; omitted fields keep their currentvalue. Send `null` to clear a field.An unknown slug, or the slug of an inactive definition, returns `422`with the offending slug under `errors.custom_fields` — nothing iswritten. Required definitions must be supplied on create. Discovervalid slugs via `GET /api/v3/contacts/custom-fields`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Hipcall.Sdk.Client.Models.ContactRequestSchema_custom_fields? CustomFields { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.ContactRequestSchema_custom_fields? CustomFields { get; set; }
 #nullable restore
 #else
-        public global::Hipcall.Sdk.Client.Models.ContactRequestSchema_custom_fields CustomFields { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.ContactRequestSchema_custom_fields CustomFields { get; set; }
 #endif
         /// <summary>Custom URL</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -36,18 +36,18 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>Array of email addresses to associate with the contact. Each email will be validated. Maximum 6 email addresses allowed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Hipcall.Sdk.Client.Models.ContactRequestSchema_emails>? Emails { get; set; }
+        public List<global::Hipcall.Sdk.Deneme.Client.Models.ContactRequestSchema_emails>? Emails { get; set; }
 #nullable restore
 #else
-        public List<global::Hipcall.Sdk.Client.Models.ContactRequestSchema_emails> Emails { get; set; }
+        public List<global::Hipcall.Sdk.Deneme.Client.Models.ContactRequestSchema_emails> Emails { get; set; }
 #endif
         /// <summary>Your own identifier for this record, unique per account. Any non-emptystring, e.g. a UUID.An integer is accepted and stored as its decimal string, so `123` and`&quot;123&quot;` are the same value (#3934 item 12 - the coercion is declaredrather than silent).A blank or whitespace-only value is rejected: send `null` to clear thefield. Arrays, objects and booleans are rejected (items 10 and 11).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Hipcall.Sdk.Client.Models.ContactRequestSchema.ContactRequestSchema_external_id? ExternalId { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.ContactRequestSchema.ContactRequestSchema_external_id? ExternalId { get; set; }
 #nullable restore
 #else
-        public global::Hipcall.Sdk.Client.Models.ContactRequestSchema.ContactRequestSchema_external_id ExternalId { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.ContactRequestSchema.ContactRequestSchema_external_id ExternalId { get; set; }
 #endif
         /// <summary>Contact first name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -86,10 +86,10 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>Array of phone numbers to associate with the contact. Each phone will be validated and normalized to E.164 format. Maximum 6 phone numbers allowed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Hipcall.Sdk.Client.Models.ContactRequestSchema_phones>? Phones { get; set; }
+        public List<global::Hipcall.Sdk.Deneme.Client.Models.ContactRequestSchema_phones>? Phones { get; set; }
 #nullable restore
 #else
-        public List<global::Hipcall.Sdk.Client.Models.ContactRequestSchema_phones> Phones { get; set; }
+        public List<global::Hipcall.Sdk.Deneme.Client.Models.ContactRequestSchema_phones> Phones { get; set; }
 #endif
         /// <summary>Sector id, from `GET /api/v3/sectors`. Must belong to your account and not be deleted.</summary>
         public int? SectorId { get; set; }
@@ -98,12 +98,12 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Hipcall.Sdk.Client.Models.ContactRequestSchema"/></returns>
+        /// <returns>A <see cref="global::Hipcall.Sdk.Deneme.Client.Models.ContactRequestSchema"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Hipcall.Sdk.Client.Models.ContactRequestSchema CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Hipcall.Sdk.Deneme.Client.Models.ContactRequestSchema CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Hipcall.Sdk.Client.Models.ContactRequestSchema();
+            return new global::Hipcall.Sdk.Deneme.Client.Models.ContactRequestSchema();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -115,16 +115,16 @@ namespace Hipcall.Sdk.Client.Models
             {
                 { "assign_to_user_id", n => { AssignToUserId = n.GetIntValue(); } },
                 { "company_id", n => { CompanyId = n.GetIntValue(); } },
-                { "custom_fields", n => { CustomFields = n.GetObjectValue<global::Hipcall.Sdk.Client.Models.ContactRequestSchema_custom_fields>(global::Hipcall.Sdk.Client.Models.ContactRequestSchema_custom_fields.CreateFromDiscriminatorValue); } },
+                { "custom_fields", n => { CustomFields = n.GetObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.ContactRequestSchema_custom_fields>(global::Hipcall.Sdk.Deneme.Client.Models.ContactRequestSchema_custom_fields.CreateFromDiscriminatorValue); } },
                 { "custom_url", n => { CustomUrl = n.GetStringValue(); } },
-                { "emails", n => { Emails = n.GetCollectionOfObjectValues<global::Hipcall.Sdk.Client.Models.ContactRequestSchema_emails>(global::Hipcall.Sdk.Client.Models.ContactRequestSchema_emails.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "external_id", n => { ExternalId = n.GetObjectValue<global::Hipcall.Sdk.Client.Models.ContactRequestSchema.ContactRequestSchema_external_id>(global::Hipcall.Sdk.Client.Models.ContactRequestSchema.ContactRequestSchema_external_id.CreateFromDiscriminatorValue); } },
+                { "emails", n => { Emails = n.GetCollectionOfObjectValues<global::Hipcall.Sdk.Deneme.Client.Models.ContactRequestSchema_emails>(global::Hipcall.Sdk.Deneme.Client.Models.ContactRequestSchema_emails.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "external_id", n => { ExternalId = n.GetObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.ContactRequestSchema.ContactRequestSchema_external_id>(global::Hipcall.Sdk.Deneme.Client.Models.ContactRequestSchema.ContactRequestSchema_external_id.CreateFromDiscriminatorValue); } },
                 { "first_name", n => { FirstName = n.GetStringValue(); } },
                 { "job_title", n => { JobTitle = n.GetStringValue(); } },
                 { "last_name", n => { LastName = n.GetStringValue(); } },
                 { "life_cycle_id", n => { LifeCycleId = n.GetIntValue(); } },
                 { "linkedin_url", n => { LinkedinUrl = n.GetStringValue(); } },
-                { "phones", n => { Phones = n.GetCollectionOfObjectValues<global::Hipcall.Sdk.Client.Models.ContactRequestSchema_phones>(global::Hipcall.Sdk.Client.Models.ContactRequestSchema_phones.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "phones", n => { Phones = n.GetCollectionOfObjectValues<global::Hipcall.Sdk.Deneme.Client.Models.ContactRequestSchema_phones>(global::Hipcall.Sdk.Deneme.Client.Models.ContactRequestSchema_phones.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "sector_id", n => { SectorId = n.GetIntValue(); } },
                 { "source_id", n => { SourceId = n.GetIntValue(); } },
             };
@@ -138,16 +138,16 @@ namespace Hipcall.Sdk.Client.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("assign_to_user_id", AssignToUserId);
             writer.WriteIntValue("company_id", CompanyId);
-            writer.WriteObjectValue<global::Hipcall.Sdk.Client.Models.ContactRequestSchema_custom_fields>("custom_fields", CustomFields);
+            writer.WriteObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.ContactRequestSchema_custom_fields>("custom_fields", CustomFields);
             writer.WriteStringValue("custom_url", CustomUrl);
-            writer.WriteCollectionOfObjectValues<global::Hipcall.Sdk.Client.Models.ContactRequestSchema_emails>("emails", Emails);
-            writer.WriteObjectValue<global::Hipcall.Sdk.Client.Models.ContactRequestSchema.ContactRequestSchema_external_id>("external_id", ExternalId);
+            writer.WriteCollectionOfObjectValues<global::Hipcall.Sdk.Deneme.Client.Models.ContactRequestSchema_emails>("emails", Emails);
+            writer.WriteObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.ContactRequestSchema.ContactRequestSchema_external_id>("external_id", ExternalId);
             writer.WriteStringValue("first_name", FirstName);
             writer.WriteStringValue("job_title", JobTitle);
             writer.WriteStringValue("last_name", LastName);
             writer.WriteIntValue("life_cycle_id", LifeCycleId);
             writer.WriteStringValue("linkedin_url", LinkedinUrl);
-            writer.WriteCollectionOfObjectValues<global::Hipcall.Sdk.Client.Models.ContactRequestSchema_phones>("phones", Phones);
+            writer.WriteCollectionOfObjectValues<global::Hipcall.Sdk.Deneme.Client.Models.ContactRequestSchema_phones>("phones", Phones);
             writer.WriteIntValue("sector_id", SectorId);
             writer.WriteIntValue("source_id", SourceId);
         }
@@ -170,13 +170,13 @@ namespace Hipcall.Sdk.Client.Models
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
             /// </summary>
-            /// <returns>A <see cref="global::Hipcall.Sdk.Client.Models.ContactRequestSchema.ContactRequestSchema_external_id"/></returns>
+            /// <returns>A <see cref="global::Hipcall.Sdk.Deneme.Client.Models.ContactRequestSchema.ContactRequestSchema_external_id"/></returns>
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Hipcall.Sdk.Client.Models.ContactRequestSchema.ContactRequestSchema_external_id CreateFromDiscriminatorValue(IParseNode parseNode)
+            public static global::Hipcall.Sdk.Deneme.Client.Models.ContactRequestSchema.ContactRequestSchema_external_id CreateFromDiscriminatorValue(IParseNode parseNode)
             {
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Hipcall.Sdk.Client.Models.ContactRequestSchema.ContactRequestSchema_external_id();
+                var result = new global::Hipcall.Sdk.Deneme.Client.Models.ContactRequestSchema.ContactRequestSchema_external_id();
                 if(parseNode.GetIntValue() is int integerValue)
                 {
                     result.Integer = integerValue;

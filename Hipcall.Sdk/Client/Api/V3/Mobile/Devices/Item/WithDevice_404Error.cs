@@ -6,7 +6,7 @@ using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Hipcall.Sdk.Client.Api.V3.Mobile.Devices.Item
+namespace Hipcall.Sdk.Deneme.Client.Api.V3.Mobile.Devices.Item
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
@@ -34,7 +34,7 @@ namespace Hipcall.Sdk.Client.Api.V3.Mobile.Devices.Item
         public string MessageEscaped { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Hipcall.Sdk.Client.Api.V3.Mobile.Devices.Item.WithDevice_404Error"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Hipcall.Sdk.Deneme.Client.Api.V3.Mobile.Devices.Item.WithDevice_404Error"/> and sets the default values.
         /// </summary>
         public WithDevice_404Error()
         {
@@ -43,12 +43,12 @@ namespace Hipcall.Sdk.Client.Api.V3.Mobile.Devices.Item
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Hipcall.Sdk.Client.Api.V3.Mobile.Devices.Item.WithDevice_404Error"/></returns>
+        /// <returns>A <see cref="global::Hipcall.Sdk.Deneme.Client.Api.V3.Mobile.Devices.Item.WithDevice_404Error"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Hipcall.Sdk.Client.Api.V3.Mobile.Devices.Item.WithDevice_404Error CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Hipcall.Sdk.Deneme.Client.Api.V3.Mobile.Devices.Item.WithDevice_404Error CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Hipcall.Sdk.Client.Api.V3.Mobile.Devices.Item.WithDevice_404Error();
+            return new global::Hipcall.Sdk.Deneme.Client.Api.V3.Mobile.Devices.Item.WithDevice_404Error();
         }
         /// <summary>
         /// The deserialization information for the current model

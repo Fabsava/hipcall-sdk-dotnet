@@ -5,7 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Hipcall.Sdk.Client.Models
+namespace Hipcall.Sdk.Deneme.Client.Models
 {
     /// <summary>
     /// Disposition attached to a CDR along with edit-window metadata
@@ -18,10 +18,10 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>The AI&apos;s suggested disposition for this call. The AI never sets the call&apos;s disposition. Null when there is no suggestion, or when the caller cannot manage settings (communication::settings).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Hipcall.Sdk.Client.Models.DispositionOnCall_ai_suggestion? AiSuggestion { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.DispositionOnCall_ai_suggestion? AiSuggestion { get; set; }
 #nullable restore
 #else
-        public global::Hipcall.Sdk.Client.Models.DispositionOnCall_ai_suggestion AiSuggestion { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.DispositionOnCall_ai_suggestion AiSuggestion { get; set; }
 #endif
         /// <summary>Disposition code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -32,7 +32,7 @@ namespace Hipcall.Sdk.Client.Models
         public string Code { get; set; }
 #endif
         /// <summary>Applicable direction</summary>
-        public global::Hipcall.Sdk.Client.Models.DispositionOnCall_direction? Direction { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.DispositionOnCall_direction? Direction { get; set; }
         /// <summary>Disposition ID</summary>
         public int? DispositionId { get; set; }
         /// <summary>Whether the current user can edit this disposition right now</summary>
@@ -50,25 +50,25 @@ namespace Hipcall.Sdk.Client.Models
         public string Name { get; set; }
 #endif
         /// <summary>Outcome category</summary>
-        public global::Hipcall.Sdk.Client.Models.DispositionOnCall_outcome? Outcome { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.DispositionOnCall_outcome? Outcome { get; set; }
         /// <summary>Who first set the disposition, and when. Null if it has never been set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Hipcall.Sdk.Client.Models.DispositionOnCall_set_by? SetBy { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.DispositionOnCall_set_by? SetBy { get; set; }
 #nullable restore
 #else
-        public global::Hipcall.Sdk.Client.Models.DispositionOnCall_set_by SetBy { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.DispositionOnCall_set_by SetBy { get; set; }
 #endif
         /// <summary>Who last changed the disposition, and when. Null if it has never been changed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Hipcall.Sdk.Client.Models.DispositionOnCall_updated_by? UpdatedBy { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.DispositionOnCall_updated_by? UpdatedBy { get; set; }
 #nullable restore
 #else
-        public global::Hipcall.Sdk.Client.Models.DispositionOnCall_updated_by UpdatedBy { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.DispositionOnCall_updated_by UpdatedBy { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Hipcall.Sdk.Client.Models.DispositionOnCall"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Hipcall.Sdk.Deneme.Client.Models.DispositionOnCall"/> and sets the default values.
         /// </summary>
         public DispositionOnCall()
         {
@@ -77,12 +77,12 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Hipcall.Sdk.Client.Models.DispositionOnCall"/></returns>
+        /// <returns>A <see cref="global::Hipcall.Sdk.Deneme.Client.Models.DispositionOnCall"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Hipcall.Sdk.Client.Models.DispositionOnCall CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Hipcall.Sdk.Deneme.Client.Models.DispositionOnCall CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Hipcall.Sdk.Client.Models.DispositionOnCall();
+            return new global::Hipcall.Sdk.Deneme.Client.Models.DispositionOnCall();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -92,17 +92,17 @@ namespace Hipcall.Sdk.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "ai_suggestion", n => { AiSuggestion = n.GetObjectValue<global::Hipcall.Sdk.Client.Models.DispositionOnCall_ai_suggestion>(global::Hipcall.Sdk.Client.Models.DispositionOnCall_ai_suggestion.CreateFromDiscriminatorValue); } },
+                { "ai_suggestion", n => { AiSuggestion = n.GetObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.DispositionOnCall_ai_suggestion>(global::Hipcall.Sdk.Deneme.Client.Models.DispositionOnCall_ai_suggestion.CreateFromDiscriminatorValue); } },
                 { "code", n => { Code = n.GetStringValue(); } },
-                { "direction", n => { Direction = n.GetEnumValue<global::Hipcall.Sdk.Client.Models.DispositionOnCall_direction>(); } },
+                { "direction", n => { Direction = n.GetEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.DispositionOnCall_direction>(); } },
                 { "disposition_id", n => { DispositionId = n.GetIntValue(); } },
                 { "edit_window_minutes", n => { EditWindowMinutes = n.GetIntValue(); } },
                 { "editable", n => { Editable = n.GetBoolValue(); } },
                 { "editable_until", n => { EditableUntil = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "outcome", n => { Outcome = n.GetEnumValue<global::Hipcall.Sdk.Client.Models.DispositionOnCall_outcome>(); } },
-                { "set_by", n => { SetBy = n.GetObjectValue<global::Hipcall.Sdk.Client.Models.DispositionOnCall_set_by>(global::Hipcall.Sdk.Client.Models.DispositionOnCall_set_by.CreateFromDiscriminatorValue); } },
-                { "updated_by", n => { UpdatedBy = n.GetObjectValue<global::Hipcall.Sdk.Client.Models.DispositionOnCall_updated_by>(global::Hipcall.Sdk.Client.Models.DispositionOnCall_updated_by.CreateFromDiscriminatorValue); } },
+                { "outcome", n => { Outcome = n.GetEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.DispositionOnCall_outcome>(); } },
+                { "set_by", n => { SetBy = n.GetObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.DispositionOnCall_set_by>(global::Hipcall.Sdk.Deneme.Client.Models.DispositionOnCall_set_by.CreateFromDiscriminatorValue); } },
+                { "updated_by", n => { UpdatedBy = n.GetObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.DispositionOnCall_updated_by>(global::Hipcall.Sdk.Deneme.Client.Models.DispositionOnCall_updated_by.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -112,17 +112,17 @@ namespace Hipcall.Sdk.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Hipcall.Sdk.Client.Models.DispositionOnCall_ai_suggestion>("ai_suggestion", AiSuggestion);
+            writer.WriteObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.DispositionOnCall_ai_suggestion>("ai_suggestion", AiSuggestion);
             writer.WriteStringValue("code", Code);
-            writer.WriteEnumValue<global::Hipcall.Sdk.Client.Models.DispositionOnCall_direction>("direction", Direction);
+            writer.WriteEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.DispositionOnCall_direction>("direction", Direction);
             writer.WriteIntValue("disposition_id", DispositionId);
             writer.WriteBoolValue("editable", Editable);
             writer.WriteDateTimeOffsetValue("editable_until", EditableUntil);
             writer.WriteIntValue("edit_window_minutes", EditWindowMinutes);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Hipcall.Sdk.Client.Models.DispositionOnCall_outcome>("outcome", Outcome);
-            writer.WriteObjectValue<global::Hipcall.Sdk.Client.Models.DispositionOnCall_set_by>("set_by", SetBy);
-            writer.WriteObjectValue<global::Hipcall.Sdk.Client.Models.DispositionOnCall_updated_by>("updated_by", UpdatedBy);
+            writer.WriteEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.DispositionOnCall_outcome>("outcome", Outcome);
+            writer.WriteObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.DispositionOnCall_set_by>("set_by", SetBy);
+            writer.WriteObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.DispositionOnCall_updated_by>("updated_by", UpdatedBy);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

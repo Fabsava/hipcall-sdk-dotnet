@@ -5,7 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Hipcall.Sdk.Client.Models
+namespace Hipcall.Sdk.Deneme.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
@@ -17,29 +17,29 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>The cdr property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_capabilities_cdr? Cdr { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_capabilities_cdr? Cdr { get; set; }
 #nullable restore
 #else
-        public global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_capabilities_cdr Cdr { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_capabilities_cdr Cdr { get; set; }
 #endif
         /// <summary>The contact_center property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_capabilities_contact_center? ContactCenter { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_capabilities_contact_center? ContactCenter { get; set; }
 #nullable restore
 #else
-        public global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_capabilities_contact_center ContactCenter { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_capabilities_contact_center ContactCenter { get; set; }
 #endif
         /// <summary>The features property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_capabilities_features? Features { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_capabilities_features? Features { get; set; }
 #nullable restore
 #else
-        public global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_capabilities_features Features { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_capabilities_features Features { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_capabilities"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_capabilities"/> and sets the default values.
         /// </summary>
         public ProfileResponseSchema_data_capabilities()
         {
@@ -48,12 +48,12 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_capabilities"/></returns>
+        /// <returns>A <see cref="global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_capabilities"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_capabilities CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_capabilities CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_capabilities();
+            return new global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_capabilities();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,9 +63,9 @@ namespace Hipcall.Sdk.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "cdr", n => { Cdr = n.GetObjectValue<global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_capabilities_cdr>(global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_capabilities_cdr.CreateFromDiscriminatorValue); } },
-                { "contact_center", n => { ContactCenter = n.GetObjectValue<global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_capabilities_contact_center>(global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_capabilities_contact_center.CreateFromDiscriminatorValue); } },
-                { "features", n => { Features = n.GetObjectValue<global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_capabilities_features>(global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_capabilities_features.CreateFromDiscriminatorValue); } },
+                { "cdr", n => { Cdr = n.GetObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_capabilities_cdr>(global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_capabilities_cdr.CreateFromDiscriminatorValue); } },
+                { "contact_center", n => { ContactCenter = n.GetObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_capabilities_contact_center>(global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_capabilities_contact_center.CreateFromDiscriminatorValue); } },
+                { "features", n => { Features = n.GetObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_capabilities_features>(global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_capabilities_features.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -75,9 +75,9 @@ namespace Hipcall.Sdk.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_capabilities_cdr>("cdr", Cdr);
-            writer.WriteObjectValue<global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_capabilities_contact_center>("contact_center", ContactCenter);
-            writer.WriteObjectValue<global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_capabilities_features>("features", Features);
+            writer.WriteObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_capabilities_cdr>("cdr", Cdr);
+            writer.WriteObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_capabilities_contact_center>("contact_center", ContactCenter);
+            writer.WriteObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_capabilities_features>("features", Features);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

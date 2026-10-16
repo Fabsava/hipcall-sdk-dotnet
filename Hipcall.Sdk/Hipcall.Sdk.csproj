@@ -5,6 +5,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <PackageId>Hipcall.Sdk.Deneme</PackageId>
+    <RootNamespace>Hipcall.Sdk.Deneme</RootNamespace>
+    <AssemblyName>Hipcall.Sdk.Deneme</AssemblyName>
     <Version>1.0.0</Version>
     <Authors>Abdulvahap Fansa, Hipcall</Authors>
     <Company>Hipcall</Company>
@@ -13,7 +15,6 @@
     <RepositoryUrl>https://github.com/Fabsava/hipcall-sdk-dotnet</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageTags>hipcall;sdk;api;rest;telephony;csharp;dotnet</PackageTags>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>

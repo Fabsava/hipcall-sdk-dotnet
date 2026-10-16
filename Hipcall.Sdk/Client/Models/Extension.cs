@@ -5,7 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Hipcall.Sdk.Client.Models
+namespace Hipcall.Sdk.Deneme.Client.Models
 {
     /// <summary>
     /// A extension
@@ -34,9 +34,9 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>Target ID</summary>
         public int? TargetId { get; set; }
         /// <summary>There are five options.- `voicemail`:- `team`:- `greeting`:- `smart_ivr`:- `user`:</summary>
-        public global::Hipcall.Sdk.Client.Models.Extension_target_type? TargetType { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.Extension_target_type? TargetType { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Hipcall.Sdk.Client.Models.Extension"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Hipcall.Sdk.Deneme.Client.Models.Extension"/> and sets the default values.
         /// </summary>
         public Extension()
         {
@@ -45,12 +45,12 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Hipcall.Sdk.Client.Models.Extension"/></returns>
+        /// <returns>A <see cref="global::Hipcall.Sdk.Deneme.Client.Models.Extension"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Hipcall.Sdk.Client.Models.Extension CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Hipcall.Sdk.Deneme.Client.Models.Extension CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Hipcall.Sdk.Client.Models.Extension();
+            return new global::Hipcall.Sdk.Deneme.Client.Models.Extension();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,7 +63,7 @@ namespace Hipcall.Sdk.Client.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "number", n => { Number = n.GetStringValue(); } },
                 { "target_id", n => { TargetId = n.GetIntValue(); } },
-                { "target_type", n => { TargetType = n.GetEnumValue<global::Hipcall.Sdk.Client.Models.Extension_target_type>(); } },
+                { "target_type", n => { TargetType = n.GetEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.Extension_target_type>(); } },
             };
         }
         /// <summary>
@@ -76,7 +76,7 @@ namespace Hipcall.Sdk.Client.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("number", Number);
             writer.WriteIntValue("target_id", TargetId);
-            writer.WriteEnumValue<global::Hipcall.Sdk.Client.Models.Extension_target_type>("target_type", TargetType);
+            writer.WriteEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.Extension_target_type>("target_type", TargetType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

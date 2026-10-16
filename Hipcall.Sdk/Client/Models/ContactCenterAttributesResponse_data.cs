@@ -5,7 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Hipcall.Sdk.Client.Models
+namespace Hipcall.Sdk.Deneme.Client.Models
 {
     /// <summary>
     /// All four contact-centre vocabularies in one object.
@@ -18,37 +18,37 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>The employee_sizes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Hipcall.Sdk.Client.Models.ContactCenterAttributesResponse_data_employee_sizes? EmployeeSizes { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.ContactCenterAttributesResponse_data_employee_sizes? EmployeeSizes { get; set; }
 #nullable restore
 #else
-        public global::Hipcall.Sdk.Client.Models.ContactCenterAttributesResponse_data_employee_sizes EmployeeSizes { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.ContactCenterAttributesResponse_data_employee_sizes EmployeeSizes { get; set; }
 #endif
         /// <summary>The life_cycles property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Hipcall.Sdk.Client.Models.ContactCenterAttributesResponse_data_life_cycles? LifeCycles { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.ContactCenterAttributesResponse_data_life_cycles? LifeCycles { get; set; }
 #nullable restore
 #else
-        public global::Hipcall.Sdk.Client.Models.ContactCenterAttributesResponse_data_life_cycles LifeCycles { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.ContactCenterAttributesResponse_data_life_cycles LifeCycles { get; set; }
 #endif
         /// <summary>The sectors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Hipcall.Sdk.Client.Models.ContactCenterAttributesResponse_data_sectors? Sectors { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.ContactCenterAttributesResponse_data_sectors? Sectors { get; set; }
 #nullable restore
 #else
-        public global::Hipcall.Sdk.Client.Models.ContactCenterAttributesResponse_data_sectors Sectors { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.ContactCenterAttributesResponse_data_sectors Sectors { get; set; }
 #endif
         /// <summary>The sources property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Hipcall.Sdk.Client.Models.ContactCenterAttributesResponse_data_sources? Sources { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.ContactCenterAttributesResponse_data_sources? Sources { get; set; }
 #nullable restore
 #else
-        public global::Hipcall.Sdk.Client.Models.ContactCenterAttributesResponse_data_sources Sources { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.ContactCenterAttributesResponse_data_sources Sources { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Hipcall.Sdk.Client.Models.ContactCenterAttributesResponse_data"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Hipcall.Sdk.Deneme.Client.Models.ContactCenterAttributesResponse_data"/> and sets the default values.
         /// </summary>
         public ContactCenterAttributesResponse_data()
         {
@@ -57,12 +57,12 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Hipcall.Sdk.Client.Models.ContactCenterAttributesResponse_data"/></returns>
+        /// <returns>A <see cref="global::Hipcall.Sdk.Deneme.Client.Models.ContactCenterAttributesResponse_data"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Hipcall.Sdk.Client.Models.ContactCenterAttributesResponse_data CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Hipcall.Sdk.Deneme.Client.Models.ContactCenterAttributesResponse_data CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Hipcall.Sdk.Client.Models.ContactCenterAttributesResponse_data();
+            return new global::Hipcall.Sdk.Deneme.Client.Models.ContactCenterAttributesResponse_data();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,10 +72,10 @@ namespace Hipcall.Sdk.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "employee_sizes", n => { EmployeeSizes = n.GetObjectValue<global::Hipcall.Sdk.Client.Models.ContactCenterAttributesResponse_data_employee_sizes>(global::Hipcall.Sdk.Client.Models.ContactCenterAttributesResponse_data_employee_sizes.CreateFromDiscriminatorValue); } },
-                { "life_cycles", n => { LifeCycles = n.GetObjectValue<global::Hipcall.Sdk.Client.Models.ContactCenterAttributesResponse_data_life_cycles>(global::Hipcall.Sdk.Client.Models.ContactCenterAttributesResponse_data_life_cycles.CreateFromDiscriminatorValue); } },
-                { "sectors", n => { Sectors = n.GetObjectValue<global::Hipcall.Sdk.Client.Models.ContactCenterAttributesResponse_data_sectors>(global::Hipcall.Sdk.Client.Models.ContactCenterAttributesResponse_data_sectors.CreateFromDiscriminatorValue); } },
-                { "sources", n => { Sources = n.GetObjectValue<global::Hipcall.Sdk.Client.Models.ContactCenterAttributesResponse_data_sources>(global::Hipcall.Sdk.Client.Models.ContactCenterAttributesResponse_data_sources.CreateFromDiscriminatorValue); } },
+                { "employee_sizes", n => { EmployeeSizes = n.GetObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.ContactCenterAttributesResponse_data_employee_sizes>(global::Hipcall.Sdk.Deneme.Client.Models.ContactCenterAttributesResponse_data_employee_sizes.CreateFromDiscriminatorValue); } },
+                { "life_cycles", n => { LifeCycles = n.GetObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.ContactCenterAttributesResponse_data_life_cycles>(global::Hipcall.Sdk.Deneme.Client.Models.ContactCenterAttributesResponse_data_life_cycles.CreateFromDiscriminatorValue); } },
+                { "sectors", n => { Sectors = n.GetObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.ContactCenterAttributesResponse_data_sectors>(global::Hipcall.Sdk.Deneme.Client.Models.ContactCenterAttributesResponse_data_sectors.CreateFromDiscriminatorValue); } },
+                { "sources", n => { Sources = n.GetObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.ContactCenterAttributesResponse_data_sources>(global::Hipcall.Sdk.Deneme.Client.Models.ContactCenterAttributesResponse_data_sources.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -85,10 +85,10 @@ namespace Hipcall.Sdk.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Hipcall.Sdk.Client.Models.ContactCenterAttributesResponse_data_employee_sizes>("employee_sizes", EmployeeSizes);
-            writer.WriteObjectValue<global::Hipcall.Sdk.Client.Models.ContactCenterAttributesResponse_data_life_cycles>("life_cycles", LifeCycles);
-            writer.WriteObjectValue<global::Hipcall.Sdk.Client.Models.ContactCenterAttributesResponse_data_sectors>("sectors", Sectors);
-            writer.WriteObjectValue<global::Hipcall.Sdk.Client.Models.ContactCenterAttributesResponse_data_sources>("sources", Sources);
+            writer.WriteObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.ContactCenterAttributesResponse_data_employee_sizes>("employee_sizes", EmployeeSizes);
+            writer.WriteObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.ContactCenterAttributesResponse_data_life_cycles>("life_cycles", LifeCycles);
+            writer.WriteObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.ContactCenterAttributesResponse_data_sectors>("sectors", Sectors);
+            writer.WriteObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.ContactCenterAttributesResponse_data_sources>("sources", Sources);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

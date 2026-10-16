@@ -23,8 +23,11 @@ jobs:
       with:
         dotnet-version: '8.0.x'
 
-    - name: Projeyi Derle ve Paketle
-      run: dotnet pack Hipcall.Sdk/Hipcall.Sdk.csproj -c Release -o out
+    - name: Projeyi Derle
+      run: dotnet build Hipcall.Sdk/Hipcall.Sdk.csproj -c Release
+
+    - name: Projeyi Paketle
+      run: dotnet pack Hipcall.Sdk/Hipcall.Sdk.csproj -c Release --no-build -o out
 
     - name: NuGet'e Gonder (Trusted Publisher)
       run: dotnet nuget push "out/*.nupkg" --source https://api.nuget.org/v3/index.json

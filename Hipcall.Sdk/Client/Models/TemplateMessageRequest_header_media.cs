@@ -5,7 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Hipcall.Sdk.Client.Models
+namespace Hipcall.Sdk.Deneme.Client.Models
 {
     /// <summary>
     /// The file an image, video or document template carries in its header. Required for those templates and rejected for text ones. The URL must be publicly reachable over HTTPS and at most 16 MB; Hipcall fetches it once and keeps its own copy, so the link may expire straight afterwards. Redirects are not followed.
@@ -32,12 +32,12 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Hipcall.Sdk.Client.Models.TemplateMessageRequest_header_media"/></returns>
+        /// <returns>A <see cref="global::Hipcall.Sdk.Deneme.Client.Models.TemplateMessageRequest_header_media"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Hipcall.Sdk.Client.Models.TemplateMessageRequest_header_media CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Hipcall.Sdk.Deneme.Client.Models.TemplateMessageRequest_header_media CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Hipcall.Sdk.Client.Models.TemplateMessageRequest_header_media();
+            return new global::Hipcall.Sdk.Deneme.Client.Models.TemplateMessageRequest_header_media();
         }
         /// <summary>
         /// The deserialization information for the current model

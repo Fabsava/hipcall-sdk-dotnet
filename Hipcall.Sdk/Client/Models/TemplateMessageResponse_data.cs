@@ -5,7 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Hipcall.Sdk.Client.Models
+namespace Hipcall.Sdk.Deneme.Client.Models
 {
     /// <summary>
     /// The send record.
@@ -60,7 +60,7 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>The conversation message written for this send, if any.</summary>
         public Guid? MessageId { get; set; }
         /// <summary>Delivery state. It advances as the supplier reports progress, so a send that reads `sent` here may read `delivered` a moment later.</summary>
-        public global::Hipcall.Sdk.Client.Models.TemplateMessageResponse_data_state? State { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.TemplateMessageResponse_data_state? State { get; set; }
         /// <summary>Recipient, in E.164 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -70,7 +70,7 @@ namespace Hipcall.Sdk.Client.Models
         public string To { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Hipcall.Sdk.Client.Models.TemplateMessageResponse_data"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Hipcall.Sdk.Deneme.Client.Models.TemplateMessageResponse_data"/> and sets the default values.
         /// </summary>
         public TemplateMessageResponse_data()
         {
@@ -79,12 +79,12 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Hipcall.Sdk.Client.Models.TemplateMessageResponse_data"/></returns>
+        /// <returns>A <see cref="global::Hipcall.Sdk.Deneme.Client.Models.TemplateMessageResponse_data"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Hipcall.Sdk.Client.Models.TemplateMessageResponse_data CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Hipcall.Sdk.Deneme.Client.Models.TemplateMessageResponse_data CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Hipcall.Sdk.Client.Models.TemplateMessageResponse_data();
+            return new global::Hipcall.Sdk.Deneme.Client.Models.TemplateMessageResponse_data();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -104,7 +104,7 @@ namespace Hipcall.Sdk.Client.Models
                 { "inserted_at", n => { InsertedAt = n.GetDateTimeOffsetValue(); } },
                 { "language_code", n => { LanguageCode = n.GetStringValue(); } },
                 { "message_id", n => { MessageId = n.GetGuidValue(); } },
-                { "state", n => { State = n.GetEnumValue<global::Hipcall.Sdk.Client.Models.TemplateMessageResponse_data_state>(); } },
+                { "state", n => { State = n.GetEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.TemplateMessageResponse_data_state>(); } },
                 { "to", n => { To = n.GetStringValue(); } },
             };
         }
@@ -125,7 +125,7 @@ namespace Hipcall.Sdk.Client.Models
             writer.WriteDateTimeOffsetValue("inserted_at", InsertedAt);
             writer.WriteStringValue("language_code", LanguageCode);
             writer.WriteGuidValue("message_id", MessageId);
-            writer.WriteEnumValue<global::Hipcall.Sdk.Client.Models.TemplateMessageResponse_data_state>("state", State);
+            writer.WriteEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.TemplateMessageResponse_data_state>("state", State);
             writer.WriteStringValue("to", To);
             writer.WriteAdditionalData(AdditionalData);
         }

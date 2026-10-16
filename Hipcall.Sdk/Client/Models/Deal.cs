@@ -5,7 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Hipcall.Sdk.Client.Models
+namespace Hipcall.Sdk.Deneme.Client.Models
 {
     /// <summary>
     /// A deal in the sales pipeline.
@@ -48,7 +48,7 @@ namespace Hipcall.Sdk.Client.Models
         public string Name { get; set; }
 #endif
         /// <summary>State</summary>
-        public global::Hipcall.Sdk.Client.Models.Deal_state? State { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.Deal_state? State { get; set; }
         /// <summary>When the deal was won</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -58,7 +58,7 @@ namespace Hipcall.Sdk.Client.Models
         public string WonAt { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Hipcall.Sdk.Client.Models.Deal"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Hipcall.Sdk.Deneme.Client.Models.Deal"/> and sets the default values.
         /// </summary>
         public Deal()
         {
@@ -67,12 +67,12 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Hipcall.Sdk.Client.Models.Deal"/></returns>
+        /// <returns>A <see cref="global::Hipcall.Sdk.Deneme.Client.Models.Deal"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Hipcall.Sdk.Client.Models.Deal CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Hipcall.Sdk.Deneme.Client.Models.Deal CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Hipcall.Sdk.Client.Models.Deal();
+            return new global::Hipcall.Sdk.Deneme.Client.Models.Deal();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -89,7 +89,7 @@ namespace Hipcall.Sdk.Client.Models
                 { "lost_at", n => { LostAt = n.GetStringValue(); } },
                 { "mrr", n => { Mrr = n.GetDoubleValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "state", n => { State = n.GetEnumValue<global::Hipcall.Sdk.Client.Models.Deal_state>(); } },
+                { "state", n => { State = n.GetEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.Deal_state>(); } },
                 { "won_at", n => { WonAt = n.GetStringValue(); } },
             };
         }
@@ -107,7 +107,7 @@ namespace Hipcall.Sdk.Client.Models
             writer.WriteStringValue("lost_at", LostAt);
             writer.WriteDoubleValue("mrr", Mrr);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Hipcall.Sdk.Client.Models.Deal_state>("state", State);
+            writer.WriteEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.Deal_state>("state", State);
             writer.WriteStringValue("won_at", WonAt);
             writer.WriteAdditionalData(AdditionalData);
         }

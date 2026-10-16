@@ -5,7 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Hipcall.Sdk.Client.Models
+namespace Hipcall.Sdk.Deneme.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
@@ -33,10 +33,10 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>User&apos;s default phone number</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_user_default_number? DefaultNumber { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_user_default_number? DefaultNumber { get; set; }
 #nullable restore
 #else
-        public global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_user_default_number DefaultNumber { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_user_default_number DefaultNumber { get; set; }
 #endif
         /// <summary>Email address</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -91,10 +91,10 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>User&apos;s available phone numbers</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_user_numbers>? Numbers { get; set; }
+        public List<global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_user_numbers>? Numbers { get; set; }
 #nullable restore
 #else
-        public List<global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_user_numbers> Numbers { get; set; }
+        public List<global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_user_numbers> Numbers { get; set; }
 #endif
         /// <summary>Is account owner</summary>
         public bool? Owner { get; set; }
@@ -115,7 +115,7 @@ namespace Hipcall.Sdk.Client.Models
         public string PhonePrefix { get; set; }
 #endif
         /// <summary>User&apos;s current status. Null when no state is recorded (e.g. suspended users).</summary>
-        public global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_user_state? State { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_user_state? State { get; set; }
         /// <summary>When the user entered their current state (UTC). Count time-in-state from this. Null when state is null or no state change has been recorded.</summary>
         public DateTimeOffset? StateChangedAt { get; set; }
         /// <summary>Is user suspended</summary>
@@ -137,7 +137,7 @@ namespace Hipcall.Sdk.Client.Models
         public string Title { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_user"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_user"/> and sets the default values.
         /// </summary>
         public ProfileResponseSchema_data_user()
         {
@@ -146,12 +146,12 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_user"/></returns>
+        /// <returns>A <see cref="global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_user"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_user CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_user CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_user();
+            return new global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_user();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -163,7 +163,7 @@ namespace Hipcall.Sdk.Client.Models
             {
                 { "avatar_url", n => { AvatarUrl = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
-                { "default_number", n => { DefaultNumber = n.GetObjectValue<global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_user_default_number>(global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_user_default_number.CreateFromDiscriminatorValue); } },
+                { "default_number", n => { DefaultNumber = n.GetObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_user_default_number>(global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_user_default_number.CreateFromDiscriminatorValue); } },
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "first_name", n => { FirstName = n.GetStringValue(); } },
                 { "full_name", n => { FullName = n.GetStringValue(); } },
@@ -171,11 +171,11 @@ namespace Hipcall.Sdk.Client.Models
                 { "last_logged_in", n => { LastLoggedIn = n.GetStringValue(); } },
                 { "last_name", n => { LastName = n.GetStringValue(); } },
                 { "locale", n => { Locale = n.GetStringValue(); } },
-                { "numbers", n => { Numbers = n.GetCollectionOfObjectValues<global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_user_numbers>(global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_user_numbers.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "numbers", n => { Numbers = n.GetCollectionOfObjectValues<global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_user_numbers>(global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_user_numbers.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "owner", n => { Owner = n.GetBoolValue(); } },
                 { "phone_countries", n => { PhoneCountries = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "phone_prefix", n => { PhonePrefix = n.GetStringValue(); } },
-                { "state", n => { State = n.GetEnumValue<global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_user_state>(); } },
+                { "state", n => { State = n.GetEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_user_state>(); } },
                 { "state_changed_at", n => { StateChangedAt = n.GetDateTimeOffsetValue(); } },
                 { "suspended", n => { Suspended = n.GetBoolValue(); } },
                 { "timezone", n => { Timezone = n.GetStringValue(); } },
@@ -191,7 +191,7 @@ namespace Hipcall.Sdk.Client.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("avatar_url", AvatarUrl);
             writer.WriteStringValue("created_at", CreatedAt);
-            writer.WriteObjectValue<global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_user_default_number>("default_number", DefaultNumber);
+            writer.WriteObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_user_default_number>("default_number", DefaultNumber);
             writer.WriteStringValue("email", Email);
             writer.WriteStringValue("first_name", FirstName);
             writer.WriteStringValue("full_name", FullName);
@@ -199,11 +199,11 @@ namespace Hipcall.Sdk.Client.Models
             writer.WriteStringValue("last_logged_in", LastLoggedIn);
             writer.WriteStringValue("last_name", LastName);
             writer.WriteStringValue("locale", Locale);
-            writer.WriteCollectionOfObjectValues<global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_user_numbers>("numbers", Numbers);
+            writer.WriteCollectionOfObjectValues<global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_user_numbers>("numbers", Numbers);
             writer.WriteBoolValue("owner", Owner);
             writer.WriteCollectionOfPrimitiveValues<string>("phone_countries", PhoneCountries);
             writer.WriteStringValue("phone_prefix", PhonePrefix);
-            writer.WriteEnumValue<global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_user_state>("state", State);
+            writer.WriteEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_user_state>("state", State);
             writer.WriteDateTimeOffsetValue("state_changed_at", StateChangedAt);
             writer.WriteBoolValue("suspended", Suspended);
             writer.WriteStringValue("timezone", Timezone);

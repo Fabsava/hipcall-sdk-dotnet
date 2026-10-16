@@ -5,7 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Hipcall.Sdk.Client.Models
+namespace Hipcall.Sdk.Deneme.Client.Models
 {
     /// <summary>
     /// A comment
@@ -28,13 +28,13 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>The user who created the comment</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Hipcall.Sdk.Client.Models.Comment_user? User { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.Comment_user? User { get; set; }
 #nullable restore
 #else
-        public global::Hipcall.Sdk.Client.Models.Comment_user User { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.Comment_user User { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Hipcall.Sdk.Client.Models.Comment"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Hipcall.Sdk.Deneme.Client.Models.Comment"/> and sets the default values.
         /// </summary>
         public Comment()
         {
@@ -43,12 +43,12 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Hipcall.Sdk.Client.Models.Comment"/></returns>
+        /// <returns>A <see cref="global::Hipcall.Sdk.Deneme.Client.Models.Comment"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Hipcall.Sdk.Client.Models.Comment CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Hipcall.Sdk.Deneme.Client.Models.Comment CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Hipcall.Sdk.Client.Models.Comment();
+            return new global::Hipcall.Sdk.Deneme.Client.Models.Comment();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -60,7 +60,7 @@ namespace Hipcall.Sdk.Client.Models
             {
                 { "content", n => { Content = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetIntValue(); } },
-                { "user", n => { User = n.GetObjectValue<global::Hipcall.Sdk.Client.Models.Comment_user>(global::Hipcall.Sdk.Client.Models.Comment_user.CreateFromDiscriminatorValue); } },
+                { "user", n => { User = n.GetObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.Comment_user>(global::Hipcall.Sdk.Deneme.Client.Models.Comment_user.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Hipcall.Sdk.Client.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("content", Content);
             writer.WriteIntValue("id", Id);
-            writer.WriteObjectValue<global::Hipcall.Sdk.Client.Models.Comment_user>("user", User);
+            writer.WriteObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.Comment_user>("user", User);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

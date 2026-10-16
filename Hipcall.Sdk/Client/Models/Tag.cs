@@ -5,7 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Hipcall.Sdk.Client.Models
+namespace Hipcall.Sdk.Deneme.Client.Models
 {
     /// <summary>
     /// A tag
@@ -24,7 +24,7 @@ namespace Hipcall.Sdk.Client.Models
         public string Color { get; set; }
 #endif
         /// <summary>Tag colour as a palette token. The canonical, persisted form of the colour. Use this in new integrations.</summary>
-        public global::Hipcall.Sdk.Client.Models.Tag_color_name? ColorName { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.Tag_color_name? ColorName { get; set; }
         /// <summary>Tag description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -44,7 +44,7 @@ namespace Hipcall.Sdk.Client.Models
         public string Name { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Hipcall.Sdk.Client.Models.Tag"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Hipcall.Sdk.Deneme.Client.Models.Tag"/> and sets the default values.
         /// </summary>
         public Tag()
         {
@@ -53,12 +53,12 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Hipcall.Sdk.Client.Models.Tag"/></returns>
+        /// <returns>A <see cref="global::Hipcall.Sdk.Deneme.Client.Models.Tag"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Hipcall.Sdk.Client.Models.Tag CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Hipcall.Sdk.Deneme.Client.Models.Tag CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Hipcall.Sdk.Client.Models.Tag();
+            return new global::Hipcall.Sdk.Deneme.Client.Models.Tag();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,7 +69,7 @@ namespace Hipcall.Sdk.Client.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "color", n => { Color = n.GetStringValue(); } },
-                { "color_name", n => { ColorName = n.GetEnumValue<global::Hipcall.Sdk.Client.Models.Tag_color_name>(); } },
+                { "color_name", n => { ColorName = n.GetEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.Tag_color_name>(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -83,7 +83,7 @@ namespace Hipcall.Sdk.Client.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("color", Color);
-            writer.WriteEnumValue<global::Hipcall.Sdk.Client.Models.Tag_color_name>("color_name", ColorName);
+            writer.WriteEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.Tag_color_name>("color_name", ColorName);
             writer.WriteStringValue("description", Description);
             writer.WriteIntValue("id", Id);
             writer.WriteStringValue("name", Name);

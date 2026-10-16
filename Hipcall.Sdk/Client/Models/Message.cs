@@ -5,7 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Hipcall.Sdk.Client.Models
+namespace Hipcall.Sdk.Deneme.Client.Models
 {
     /// <summary>
     /// A conversation message
@@ -16,11 +16,11 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Who wrote the message: `contact` for an inbound message, `user` for a reply by a user (see `user_id`), `bot` for an automated reply. Null for an outbound message with no recorded author.</summary>
-        public global::Hipcall.Sdk.Client.Models.Message_author? Author { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.Message_author? Author { get; set; }
         /// <summary>Parent conversation UUID</summary>
         public Guid? ConversationId { get; set; }
         /// <summary>Message direction</summary>
-        public global::Hipcall.Sdk.Client.Models.Message_direction? Direction { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.Message_direction? Direction { get; set; }
         /// <summary>Error code for failed messages (1-99)</summary>
         public int? ErrorCode { get; set; }
         /// <summary>Message UUID</summary>
@@ -38,21 +38,21 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>Message payload content</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Hipcall.Sdk.Client.Models.Message_payload? Payload { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.Message_payload? Payload { get; set; }
 #nullable restore
 #else
-        public global::Hipcall.Sdk.Client.Models.Message_payload Payload { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.Message_payload Payload { get; set; }
 #endif
         /// <summary>Message state</summary>
-        public global::Hipcall.Sdk.Client.Models.Message_state? State { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.Message_state? State { get; set; }
         /// <summary>Message type. `template` is an approved WhatsApp template sent to the contact: `payload.body` is the template text with `{{name}}` placeholders and `payload.params` holds their values. Secret values, such as one-time codes, are not stored; their names are listed in `payload.secret_tokens`. `unsupported` is an inbound message of a type this API cannot represent yet; its payload carries only `original_type`.</summary>
-        public global::Hipcall.Sdk.Client.Models.Message_type? Type { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.Message_type? Type { get; set; }
         /// <summary>Updated timestamp</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>User ID who sent/handled the message</summary>
         public int? UserId { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Hipcall.Sdk.Client.Models.Message"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Hipcall.Sdk.Deneme.Client.Models.Message"/> and sets the default values.
         /// </summary>
         public Message()
         {
@@ -61,12 +61,12 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Hipcall.Sdk.Client.Models.Message"/></returns>
+        /// <returns>A <see cref="global::Hipcall.Sdk.Deneme.Client.Models.Message"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Hipcall.Sdk.Client.Models.Message CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Hipcall.Sdk.Deneme.Client.Models.Message CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Hipcall.Sdk.Client.Models.Message();
+            return new global::Hipcall.Sdk.Deneme.Client.Models.Message();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -76,16 +76,16 @@ namespace Hipcall.Sdk.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "author", n => { Author = n.GetEnumValue<global::Hipcall.Sdk.Client.Models.Message_author>(); } },
+                { "author", n => { Author = n.GetEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.Message_author>(); } },
                 { "conversation_id", n => { ConversationId = n.GetGuidValue(); } },
-                { "direction", n => { Direction = n.GetEnumValue<global::Hipcall.Sdk.Client.Models.Message_direction>(); } },
+                { "direction", n => { Direction = n.GetEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.Message_direction>(); } },
                 { "error_code", n => { ErrorCode = n.GetIntValue(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "inserted_at", n => { InsertedAt = n.GetDateTimeOffsetValue(); } },
                 { "media_url", n => { MediaUrl = n.GetStringValue(); } },
-                { "payload", n => { Payload = n.GetObjectValue<global::Hipcall.Sdk.Client.Models.Message_payload>(global::Hipcall.Sdk.Client.Models.Message_payload.CreateFromDiscriminatorValue); } },
-                { "state", n => { State = n.GetEnumValue<global::Hipcall.Sdk.Client.Models.Message_state>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Hipcall.Sdk.Client.Models.Message_type>(); } },
+                { "payload", n => { Payload = n.GetObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.Message_payload>(global::Hipcall.Sdk.Deneme.Client.Models.Message_payload.CreateFromDiscriminatorValue); } },
+                { "state", n => { State = n.GetEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.Message_state>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.Message_type>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "user_id", n => { UserId = n.GetIntValue(); } },
             };
@@ -97,16 +97,16 @@ namespace Hipcall.Sdk.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Hipcall.Sdk.Client.Models.Message_author>("author", Author);
+            writer.WriteEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.Message_author>("author", Author);
             writer.WriteGuidValue("conversation_id", ConversationId);
-            writer.WriteEnumValue<global::Hipcall.Sdk.Client.Models.Message_direction>("direction", Direction);
+            writer.WriteEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.Message_direction>("direction", Direction);
             writer.WriteIntValue("error_code", ErrorCode);
             writer.WriteGuidValue("id", Id);
             writer.WriteDateTimeOffsetValue("inserted_at", InsertedAt);
             writer.WriteStringValue("media_url", MediaUrl);
-            writer.WriteObjectValue<global::Hipcall.Sdk.Client.Models.Message_payload>("payload", Payload);
-            writer.WriteEnumValue<global::Hipcall.Sdk.Client.Models.Message_state>("state", State);
-            writer.WriteEnumValue<global::Hipcall.Sdk.Client.Models.Message_type>("type", Type);
+            writer.WriteObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.Message_payload>("payload", Payload);
+            writer.WriteEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.Message_state>("state", State);
+            writer.WriteEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.Message_type>("type", Type);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteIntValue("user_id", UserId);
             writer.WriteAdditionalData(AdditionalData);

@@ -1,6 +1,6 @@
 using Microsoft.Kiota.Abstractions.Authentication;
 
-namespace Hipcall.Sdk.Authentication;
+namespace Hipcall.Sdk.Deneme.Authentication;
 
 /// <summary>
 /// Kiota <see cref="IAccessTokenProvider"/> that reads the token from an <see cref="ITokenStore"/>

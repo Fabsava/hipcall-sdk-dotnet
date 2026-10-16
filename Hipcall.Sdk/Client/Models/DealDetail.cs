@@ -5,33 +5,33 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Hipcall.Sdk.Client.Models
+namespace Hipcall.Sdk.Deneme.Client.Models
 {
     /// <summary>
     /// A deal with its line items (GET /deals/:id); the line item fields only when the account uses products.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class DealDetail : global::Hipcall.Sdk.Client.Models.Deal, IParsable
+    public partial class DealDetail : global::Hipcall.Sdk.Deneme.Client.Models.Deal, IParsable
     {
         /// <summary>`line_items`: `amount` is the first-year value of the line items and cannot be edited by hand. `manual`: the deal has no line items. Present only when the account uses products. Added in November 2026.</summary>
-        public global::Hipcall.Sdk.Client.Models.DealDetail_amount_source? AmountSource { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.DealDetail_amount_source? AmountSource { get; set; }
         /// <summary>The deal&apos;s line items, in order. Present only when the account uses products. Added in November 2026.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Hipcall.Sdk.Client.Models.DealLineItem>? LineItems { get; set; }
+        public List<global::Hipcall.Sdk.Deneme.Client.Models.DealLineItem>? LineItems { get; set; }
 #nullable restore
 #else
-        public List<global::Hipcall.Sdk.Client.Models.DealLineItem> LineItems { get; set; }
+        public List<global::Hipcall.Sdk.Deneme.Client.Models.DealLineItem> LineItems { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Hipcall.Sdk.Client.Models.DealDetail"/></returns>
+        /// <returns>A <see cref="global::Hipcall.Sdk.Deneme.Client.Models.DealDetail"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Hipcall.Sdk.Client.Models.DealDetail CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new global::Hipcall.Sdk.Deneme.Client.Models.DealDetail CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Hipcall.Sdk.Client.Models.DealDetail();
+            return new global::Hipcall.Sdk.Deneme.Client.Models.DealDetail();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -41,8 +41,8 @@ namespace Hipcall.Sdk.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "amount_source", n => { AmountSource = n.GetEnumValue<global::Hipcall.Sdk.Client.Models.DealDetail_amount_source>(); } },
-                { "line_items", n => { LineItems = n.GetCollectionOfObjectValues<global::Hipcall.Sdk.Client.Models.DealLineItem>(global::Hipcall.Sdk.Client.Models.DealLineItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "amount_source", n => { AmountSource = n.GetEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.DealDetail_amount_source>(); } },
+                { "line_items", n => { LineItems = n.GetCollectionOfObjectValues<global::Hipcall.Sdk.Deneme.Client.Models.DealLineItem>(global::Hipcall.Sdk.Deneme.Client.Models.DealLineItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -53,8 +53,8 @@ namespace Hipcall.Sdk.Client.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<global::Hipcall.Sdk.Client.Models.DealDetail_amount_source>("amount_source", AmountSource);
-            writer.WriteCollectionOfObjectValues<global::Hipcall.Sdk.Client.Models.DealLineItem>("line_items", LineItems);
+            writer.WriteEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.DealDetail_amount_source>("amount_source", AmountSource);
+            writer.WriteCollectionOfObjectValues<global::Hipcall.Sdk.Deneme.Client.Models.DealLineItem>("line_items", LineItems);
         }
     }
 }

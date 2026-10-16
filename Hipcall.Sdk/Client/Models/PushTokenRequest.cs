@@ -5,7 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Hipcall.Sdk.Client.Models
+namespace Hipcall.Sdk.Deneme.Client.Models
 {
     /// <summary>
     /// Registers an FCM or APNs device token against the authenticated user so Hipcall candeliver call and message notifications.
@@ -24,9 +24,9 @@ namespace Hipcall.Sdk.Client.Models
         public string Token { get; set; }
 #endif
         /// <summary>Type of push token</summary>
-        public global::Hipcall.Sdk.Client.Models.PushTokenRequest_token_type? TokenType { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.PushTokenRequest_token_type? TokenType { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Hipcall.Sdk.Client.Models.PushTokenRequest"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Hipcall.Sdk.Deneme.Client.Models.PushTokenRequest"/> and sets the default values.
         /// </summary>
         public PushTokenRequest()
         {
@@ -35,12 +35,12 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Hipcall.Sdk.Client.Models.PushTokenRequest"/></returns>
+        /// <returns>A <see cref="global::Hipcall.Sdk.Deneme.Client.Models.PushTokenRequest"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Hipcall.Sdk.Client.Models.PushTokenRequest CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Hipcall.Sdk.Deneme.Client.Models.PushTokenRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Hipcall.Sdk.Client.Models.PushTokenRequest();
+            return new global::Hipcall.Sdk.Deneme.Client.Models.PushTokenRequest();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -51,7 +51,7 @@ namespace Hipcall.Sdk.Client.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "token", n => { Token = n.GetStringValue(); } },
-                { "token_type", n => { TokenType = n.GetEnumValue<global::Hipcall.Sdk.Client.Models.PushTokenRequest_token_type>(); } },
+                { "token_type", n => { TokenType = n.GetEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.PushTokenRequest_token_type>(); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Hipcall.Sdk.Client.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("token", Token);
-            writer.WriteEnumValue<global::Hipcall.Sdk.Client.Models.PushTokenRequest_token_type>("token_type", TokenType);
+            writer.WriteEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.PushTokenRequest_token_type>("token_type", TokenType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

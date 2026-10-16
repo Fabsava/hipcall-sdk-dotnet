@@ -5,7 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Hipcall.Sdk.Client.Models
+namespace Hipcall.Sdk.Deneme.Client.Models
 {
     /// <summary>
     /// PUT body for setting or updating a call&apos;s disposition. Provide EITHER disposition_id OR disposition_code (exactly one).
@@ -26,7 +26,7 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>Disposition ID within the caller&apos;s account</summary>
         public int? DispositionId { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Hipcall.Sdk.Client.Models.DispositionUpdateRequest"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Hipcall.Sdk.Deneme.Client.Models.DispositionUpdateRequest"/> and sets the default values.
         /// </summary>
         public DispositionUpdateRequest()
         {
@@ -35,12 +35,12 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Hipcall.Sdk.Client.Models.DispositionUpdateRequest"/></returns>
+        /// <returns>A <see cref="global::Hipcall.Sdk.Deneme.Client.Models.DispositionUpdateRequest"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Hipcall.Sdk.Client.Models.DispositionUpdateRequest CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Hipcall.Sdk.Deneme.Client.Models.DispositionUpdateRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Hipcall.Sdk.Client.Models.DispositionUpdateRequest();
+            return new global::Hipcall.Sdk.Deneme.Client.Models.DispositionUpdateRequest();
         }
         /// <summary>
         /// The deserialization information for the current model

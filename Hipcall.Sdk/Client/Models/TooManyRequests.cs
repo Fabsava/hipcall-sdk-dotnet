@@ -6,7 +6,7 @@ using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Hipcall.Sdk.Client.Models
+namespace Hipcall.Sdk.Deneme.Client.Models
 {
     /// <summary>
     /// Returned when the caller has exhausted its request budget. The `Retry-After`response header carries the number of seconds to wait; the `X-RateLimit-*`headers describe the budget itself.
@@ -19,15 +19,15 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>Error envelope.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Hipcall.Sdk.Client.Models.TooManyRequests_errors? Errors { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.TooManyRequests_errors? Errors { get; set; }
 #nullable restore
 #else
-        public global::Hipcall.Sdk.Client.Models.TooManyRequests_errors Errors { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.TooManyRequests_errors Errors { get; set; }
 #endif
         /// <summary>The primary error message.</summary>
         public override string Message { get => base.Message; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Hipcall.Sdk.Client.Models.TooManyRequests"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Hipcall.Sdk.Deneme.Client.Models.TooManyRequests"/> and sets the default values.
         /// </summary>
         public TooManyRequests()
         {
@@ -36,12 +36,12 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Hipcall.Sdk.Client.Models.TooManyRequests"/></returns>
+        /// <returns>A <see cref="global::Hipcall.Sdk.Deneme.Client.Models.TooManyRequests"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Hipcall.Sdk.Client.Models.TooManyRequests CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Hipcall.Sdk.Deneme.Client.Models.TooManyRequests CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Hipcall.Sdk.Client.Models.TooManyRequests();
+            return new global::Hipcall.Sdk.Deneme.Client.Models.TooManyRequests();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -51,7 +51,7 @@ namespace Hipcall.Sdk.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "errors", n => { Errors = n.GetObjectValue<global::Hipcall.Sdk.Client.Models.TooManyRequests_errors>(global::Hipcall.Sdk.Client.Models.TooManyRequests_errors.CreateFromDiscriminatorValue); } },
+                { "errors", n => { Errors = n.GetObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.TooManyRequests_errors>(global::Hipcall.Sdk.Deneme.Client.Models.TooManyRequests_errors.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Hipcall.Sdk.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Hipcall.Sdk.Client.Models.TooManyRequests_errors>("errors", Errors);
+            writer.WriteObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.TooManyRequests_errors>("errors", Errors);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

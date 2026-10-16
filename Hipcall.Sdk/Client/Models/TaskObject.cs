@@ -5,7 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Hipcall.Sdk.Client.Models
+namespace Hipcall.Sdk.Deneme.Client.Models
 {
     /// <summary>
     /// A task
@@ -20,18 +20,18 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>Associated companies (if any)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Hipcall.Sdk.Client.Models.Company>? Companies { get; set; }
+        public List<global::Hipcall.Sdk.Deneme.Client.Models.Company>? Companies { get; set; }
 #nullable restore
 #else
-        public List<global::Hipcall.Sdk.Client.Models.Company> Companies { get; set; }
+        public List<global::Hipcall.Sdk.Deneme.Client.Models.Company> Companies { get; set; }
 #endif
         /// <summary>Associated contacts (if any)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Hipcall.Sdk.Client.Models.Contact>? Contacts { get; set; }
+        public List<global::Hipcall.Sdk.Deneme.Client.Models.Contact>? Contacts { get; set; }
 #nullable restore
 #else
-        public List<global::Hipcall.Sdk.Client.Models.Contact> Contacts { get; set; }
+        public List<global::Hipcall.Sdk.Deneme.Client.Models.Contact> Contacts { get; set; }
 #endif
         /// <summary>Description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -58,9 +58,9 @@ namespace Hipcall.Sdk.Client.Models
         public string Name { get; set; }
 #endif
         /// <summary>Priority</summary>
-        public global::Hipcall.Sdk.Client.Models.Task_priority? Priority { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.Task_priority? Priority { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Hipcall.Sdk.Client.Models.TaskObject"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Hipcall.Sdk.Deneme.Client.Models.TaskObject"/> and sets the default values.
         /// </summary>
         public TaskObject()
         {
@@ -69,12 +69,12 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Hipcall.Sdk.Client.Models.TaskObject"/></returns>
+        /// <returns>A <see cref="global::Hipcall.Sdk.Deneme.Client.Models.TaskObject"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Hipcall.Sdk.Client.Models.TaskObject CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Hipcall.Sdk.Deneme.Client.Models.TaskObject CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Hipcall.Sdk.Client.Models.TaskObject();
+            return new global::Hipcall.Sdk.Deneme.Client.Models.TaskObject();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -85,15 +85,15 @@ namespace Hipcall.Sdk.Client.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "assign_to_user_id", n => { AssignToUserId = n.GetIntValue(); } },
-                { "companies", n => { Companies = n.GetCollectionOfObjectValues<global::Hipcall.Sdk.Client.Models.Company>(global::Hipcall.Sdk.Client.Models.Company.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "contacts", n => { Contacts = n.GetCollectionOfObjectValues<global::Hipcall.Sdk.Client.Models.Contact>(global::Hipcall.Sdk.Client.Models.Contact.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "companies", n => { Companies = n.GetCollectionOfObjectValues<global::Hipcall.Sdk.Deneme.Client.Models.Company>(global::Hipcall.Sdk.Deneme.Client.Models.Company.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "contacts", n => { Contacts = n.GetCollectionOfObjectValues<global::Hipcall.Sdk.Deneme.Client.Models.Contact>(global::Hipcall.Sdk.Deneme.Client.Models.Contact.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "done", n => { Done = n.GetBoolValue(); } },
                 { "done_at", n => { DoneAt = n.GetDateTimeOffsetValue(); } },
                 { "due_date", n => { DueDate = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "priority", n => { Priority = n.GetEnumValue<global::Hipcall.Sdk.Client.Models.Task_priority>(); } },
+                { "priority", n => { Priority = n.GetEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.Task_priority>(); } },
             };
         }
         /// <summary>
@@ -104,15 +104,15 @@ namespace Hipcall.Sdk.Client.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("assign_to_user_id", AssignToUserId);
-            writer.WriteCollectionOfObjectValues<global::Hipcall.Sdk.Client.Models.Company>("companies", Companies);
-            writer.WriteCollectionOfObjectValues<global::Hipcall.Sdk.Client.Models.Contact>("contacts", Contacts);
+            writer.WriteCollectionOfObjectValues<global::Hipcall.Sdk.Deneme.Client.Models.Company>("companies", Companies);
+            writer.WriteCollectionOfObjectValues<global::Hipcall.Sdk.Deneme.Client.Models.Contact>("contacts", Contacts);
             writer.WriteStringValue("description", Description);
             writer.WriteBoolValue("done", Done);
             writer.WriteDateTimeOffsetValue("done_at", DoneAt);
             writer.WriteDateTimeOffsetValue("due_date", DueDate);
             writer.WriteIntValue("id", Id);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Hipcall.Sdk.Client.Models.Task_priority>("priority", Priority);
+            writer.WriteEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.Task_priority>("priority", Priority);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

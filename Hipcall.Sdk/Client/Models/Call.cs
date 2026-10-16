@@ -5,7 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Hipcall.Sdk.Client.Models
+namespace Hipcall.Sdk.Deneme.Client.Models
 {
     /// <summary>
     /// Call logs
@@ -22,7 +22,7 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>Call duration</summary>
         public int? CallDuration { get; set; }
         /// <summary>There are three options.- `inbound`: If a client calls your phone number.- `outbound`: If a user calls a client or external number.- `internal`: If a user calls another user.</summary>
-        public global::Hipcall.Sdk.Client.Models.Call_direction? Direction { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.Call_direction? Direction { get; set; }
         /// <summary>Call ended at.</summary>
         public DateTimeOffset? EndedAt { get; set; }
         /// <summary>Seconds between the call arriving and an agent being bridged in.`null` when no agent ever answered the call (abandoned, out ofbusiness hours, denylisted). Historical records written beforehipcall/hq#3887 carry `0` instead of `null` for those calls.</summary>
@@ -58,7 +58,7 @@ namespace Hipcall.Sdk.Client.Models
         public string VoicemailUrl { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Hipcall.Sdk.Client.Models.Call"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Hipcall.Sdk.Deneme.Client.Models.Call"/> and sets the default values.
         /// </summary>
         public Call()
         {
@@ -67,12 +67,12 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Hipcall.Sdk.Client.Models.Call"/></returns>
+        /// <returns>A <see cref="global::Hipcall.Sdk.Deneme.Client.Models.Call"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Hipcall.Sdk.Client.Models.Call CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Hipcall.Sdk.Deneme.Client.Models.Call CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Hipcall.Sdk.Client.Models.Call();
+            return new global::Hipcall.Sdk.Deneme.Client.Models.Call();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -85,7 +85,7 @@ namespace Hipcall.Sdk.Client.Models
                 { "answered_at", n => { AnsweredAt = n.GetDateTimeOffsetValue(); } },
                 { "bridged_at", n => { BridgedAt = n.GetDateTimeOffsetValue(); } },
                 { "call_duration", n => { CallDuration = n.GetIntValue(); } },
-                { "direction", n => { Direction = n.GetEnumValue<global::Hipcall.Sdk.Client.Models.Call_direction>(); } },
+                { "direction", n => { Direction = n.GetEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.Call_direction>(); } },
                 { "ended_at", n => { EndedAt = n.GetDateTimeOffsetValue(); } },
                 { "first_touch_duration", n => { FirstTouchDuration = n.GetIntValue(); } },
                 { "has_recording", n => { HasRecording = n.GetBoolValue(); } },
@@ -109,7 +109,7 @@ namespace Hipcall.Sdk.Client.Models
             writer.WriteDateTimeOffsetValue("answered_at", AnsweredAt);
             writer.WriteDateTimeOffsetValue("bridged_at", BridgedAt);
             writer.WriteIntValue("call_duration", CallDuration);
-            writer.WriteEnumValue<global::Hipcall.Sdk.Client.Models.Call_direction>("direction", Direction);
+            writer.WriteEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.Call_direction>("direction", Direction);
             writer.WriteDateTimeOffsetValue("ended_at", EndedAt);
             writer.WriteIntValue("first_touch_duration", FirstTouchDuration);
             writer.WriteBoolValue("has_recording", HasRecording);

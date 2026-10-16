@@ -5,7 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Hipcall.Sdk.Client.Models
+namespace Hipcall.Sdk.Deneme.Client.Models
 {
     /// <summary>
     /// Which contact-centre fields are enabled for this account. These are field-visibility settings, changed only in the portal — they are not writable through the API. Every key is always present; defaults are applied for accounts that never changed a setting.
@@ -36,7 +36,7 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>Company employee-size field enabled</summary>
         public bool? EmployeeSize { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_account_contact_center"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_account_contact_center"/> and sets the default values.
         /// </summary>
         public ProfileResponseSchema_data_account_contact_center()
         {
@@ -45,12 +45,12 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_account_contact_center"/></returns>
+        /// <returns>A <see cref="global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_account_contact_center"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_account_contact_center CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_account_contact_center CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_account_contact_center();
+            return new global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_account_contact_center();
         }
         /// <summary>
         /// The deserialization information for the current model

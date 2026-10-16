@@ -5,7 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Hipcall.Sdk.Client.Models
+namespace Hipcall.Sdk.Deneme.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
@@ -19,15 +19,15 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>The data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Hipcall.Sdk.Client.Models.EmployeeSizeOption>? Data { get; set; }
+        public List<global::Hipcall.Sdk.Deneme.Client.Models.EmployeeSizeOption>? Data { get; set; }
 #nullable restore
 #else
-        public List<global::Hipcall.Sdk.Client.Models.EmployeeSizeOption> Data { get; set; }
+        public List<global::Hipcall.Sdk.Deneme.Client.Models.EmployeeSizeOption> Data { get; set; }
 #endif
         /// <summary>Always false — a fixed enum can never be truncated</summary>
         public bool? Truncated { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Hipcall.Sdk.Client.Models.ContactCenterAttributesResponse_data_employee_sizes"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Hipcall.Sdk.Deneme.Client.Models.ContactCenterAttributesResponse_data_employee_sizes"/> and sets the default values.
         /// </summary>
         public ContactCenterAttributesResponse_data_employee_sizes()
         {
@@ -36,12 +36,12 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Hipcall.Sdk.Client.Models.ContactCenterAttributesResponse_data_employee_sizes"/></returns>
+        /// <returns>A <see cref="global::Hipcall.Sdk.Deneme.Client.Models.ContactCenterAttributesResponse_data_employee_sizes"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Hipcall.Sdk.Client.Models.ContactCenterAttributesResponse_data_employee_sizes CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Hipcall.Sdk.Deneme.Client.Models.ContactCenterAttributesResponse_data_employee_sizes CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Hipcall.Sdk.Client.Models.ContactCenterAttributesResponse_data_employee_sizes();
+            return new global::Hipcall.Sdk.Deneme.Client.Models.ContactCenterAttributesResponse_data_employee_sizes();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -52,7 +52,7 @@ namespace Hipcall.Sdk.Client.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "count", n => { Count = n.GetIntValue(); } },
-                { "data", n => { Data = n.GetCollectionOfObjectValues<global::Hipcall.Sdk.Client.Models.EmployeeSizeOption>(global::Hipcall.Sdk.Client.Models.EmployeeSizeOption.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "data", n => { Data = n.GetCollectionOfObjectValues<global::Hipcall.Sdk.Deneme.Client.Models.EmployeeSizeOption>(global::Hipcall.Sdk.Deneme.Client.Models.EmployeeSizeOption.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "truncated", n => { Truncated = n.GetBoolValue(); } },
             };
         }
@@ -64,7 +64,7 @@ namespace Hipcall.Sdk.Client.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("count", Count);
-            writer.WriteCollectionOfObjectValues<global::Hipcall.Sdk.Client.Models.EmployeeSizeOption>("data", Data);
+            writer.WriteCollectionOfObjectValues<global::Hipcall.Sdk.Deneme.Client.Models.EmployeeSizeOption>("data", Data);
             writer.WriteBoolValue("truncated", Truncated);
             writer.WriteAdditionalData(AdditionalData);
         }

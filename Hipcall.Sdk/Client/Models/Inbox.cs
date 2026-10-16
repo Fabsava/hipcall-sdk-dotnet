@@ -5,7 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Hipcall.Sdk.Client.Models
+namespace Hipcall.Sdk.Deneme.Client.Models
 {
     /// <summary>
     /// An inbox
@@ -34,13 +34,13 @@ namespace Hipcall.Sdk.Client.Models
         public string Name { get; set; }
 #endif
         /// <summary>Type</summary>
-        public global::Hipcall.Sdk.Client.Models.Inbox_type? Type { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.Inbox_type? Type { get; set; }
         /// <summary>User case</summary>
-        public global::Hipcall.Sdk.Client.Models.Inbox_user_case? UserCase { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.Inbox_user_case? UserCase { get; set; }
         /// <summary>WhatsApp inboxes only: whether WhatsApp calls reach Hipcall. `null` for other inbox types.</summary>
         public bool? WhatsappCallsEnabled { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Hipcall.Sdk.Client.Models.Inbox"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Hipcall.Sdk.Deneme.Client.Models.Inbox"/> and sets the default values.
         /// </summary>
         public Inbox()
         {
@@ -49,12 +49,12 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Hipcall.Sdk.Client.Models.Inbox"/></returns>
+        /// <returns>A <see cref="global::Hipcall.Sdk.Deneme.Client.Models.Inbox"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Hipcall.Sdk.Client.Models.Inbox CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Hipcall.Sdk.Deneme.Client.Models.Inbox CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Hipcall.Sdk.Client.Models.Inbox();
+            return new global::Hipcall.Sdk.Deneme.Client.Models.Inbox();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,8 +67,8 @@ namespace Hipcall.Sdk.Client.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Hipcall.Sdk.Client.Models.Inbox_type>(); } },
-                { "user_case", n => { UserCase = n.GetEnumValue<global::Hipcall.Sdk.Client.Models.Inbox_user_case>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.Inbox_type>(); } },
+                { "user_case", n => { UserCase = n.GetEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.Inbox_user_case>(); } },
                 { "whatsapp_calls_enabled", n => { WhatsappCallsEnabled = n.GetBoolValue(); } },
             };
         }
@@ -82,8 +82,8 @@ namespace Hipcall.Sdk.Client.Models
             writer.WriteStringValue("description", Description);
             writer.WriteGuidValue("id", Id);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Hipcall.Sdk.Client.Models.Inbox_type>("type", Type);
-            writer.WriteEnumValue<global::Hipcall.Sdk.Client.Models.Inbox_user_case>("user_case", UserCase);
+            writer.WriteEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.Inbox_type>("type", Type);
+            writer.WriteEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.Inbox_user_case>("user_case", UserCase);
             writer.WriteBoolValue("whatsapp_calls_enabled", WhatsappCallsEnabled);
             writer.WriteAdditionalData(AdditionalData);
         }

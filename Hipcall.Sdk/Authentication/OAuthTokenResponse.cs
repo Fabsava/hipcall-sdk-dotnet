@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 
-namespace Hipcall.Sdk.Authentication;
+namespace Hipcall.Sdk.Deneme.Authentication;
 
 /// <summary>
 /// Successful response of the Hipcall <c>POST /oauth/token</c> endpoint.

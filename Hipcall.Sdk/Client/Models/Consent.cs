@@ -5,7 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Hipcall.Sdk.Client.Models
+namespace Hipcall.Sdk.Deneme.Client.Models
 {
     /// <summary>
     /// One advertising / marketing consent ledger entry
@@ -14,16 +14,16 @@ namespace Hipcall.Sdk.Client.Models
     public partial class Consent : IAdditionalDataHolder, IParsable
     {
         /// <summary>What was recorded</summary>
-        public global::Hipcall.Sdk.Client.Models.Consent_action? Action { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.Consent_action? Action { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>References proving the record</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Hipcall.Sdk.Client.Models.Consent_evidence? Evidence { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.Consent_evidence? Evidence { get; set; }
 #nullable restore
 #else
-        public global::Hipcall.Sdk.Client.Models.Consent_evidence Evidence { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.Consent_evidence Evidence { get; set; }
 #endif
         /// <summary>When a granted consent lapses. Null on a refusal, and on a grant the account has given no validity period</summary>
         public DateTimeOffset? ExpiresAt { get; set; }
@@ -32,7 +32,7 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>When the consent was actually given, which an import may backdate — not when the row was written</summary>
         public DateTimeOffset? PerformedAt { get; set; }
         /// <summary>Consent purpose</summary>
-        public global::Hipcall.Sdk.Client.Models.Consent_purpose? Purpose { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.Consent_purpose? Purpose { get; set; }
         /// <summary>Where the record came from</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -50,7 +50,7 @@ namespace Hipcall.Sdk.Client.Models
         public string TextVersion { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Hipcall.Sdk.Client.Models.Consent"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Hipcall.Sdk.Deneme.Client.Models.Consent"/> and sets the default values.
         /// </summary>
         public Consent()
         {
@@ -59,12 +59,12 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Hipcall.Sdk.Client.Models.Consent"/></returns>
+        /// <returns>A <see cref="global::Hipcall.Sdk.Deneme.Client.Models.Consent"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Hipcall.Sdk.Client.Models.Consent CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Hipcall.Sdk.Deneme.Client.Models.Consent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Hipcall.Sdk.Client.Models.Consent();
+            return new global::Hipcall.Sdk.Deneme.Client.Models.Consent();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -74,12 +74,12 @@ namespace Hipcall.Sdk.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { Action = n.GetEnumValue<global::Hipcall.Sdk.Client.Models.Consent_action>(); } },
-                { "evidence", n => { Evidence = n.GetObjectValue<global::Hipcall.Sdk.Client.Models.Consent_evidence>(global::Hipcall.Sdk.Client.Models.Consent_evidence.CreateFromDiscriminatorValue); } },
+                { "action", n => { Action = n.GetEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.Consent_action>(); } },
+                { "evidence", n => { Evidence = n.GetObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.Consent_evidence>(global::Hipcall.Sdk.Deneme.Client.Models.Consent_evidence.CreateFromDiscriminatorValue); } },
                 { "expires_at", n => { ExpiresAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetIntValue(); } },
                 { "performed_at", n => { PerformedAt = n.GetDateTimeOffsetValue(); } },
-                { "purpose", n => { Purpose = n.GetEnumValue<global::Hipcall.Sdk.Client.Models.Consent_purpose>(); } },
+                { "purpose", n => { Purpose = n.GetEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.Consent_purpose>(); } },
                 { "source", n => { Source = n.GetStringValue(); } },
                 { "text_version", n => { TextVersion = n.GetStringValue(); } },
             };
@@ -91,12 +91,12 @@ namespace Hipcall.Sdk.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Hipcall.Sdk.Client.Models.Consent_action>("action", Action);
-            writer.WriteObjectValue<global::Hipcall.Sdk.Client.Models.Consent_evidence>("evidence", Evidence);
+            writer.WriteEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.Consent_action>("action", Action);
+            writer.WriteObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.Consent_evidence>("evidence", Evidence);
             writer.WriteDateTimeOffsetValue("expires_at", ExpiresAt);
             writer.WriteIntValue("id", Id);
             writer.WriteDateTimeOffsetValue("performed_at", PerformedAt);
-            writer.WriteEnumValue<global::Hipcall.Sdk.Client.Models.Consent_purpose>("purpose", Purpose);
+            writer.WriteEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.Consent_purpose>("purpose", Purpose);
             writer.WriteStringValue("source", Source);
             writer.WriteStringValue("text_version", TextVersion);
             writer.WriteAdditionalData(AdditionalData);

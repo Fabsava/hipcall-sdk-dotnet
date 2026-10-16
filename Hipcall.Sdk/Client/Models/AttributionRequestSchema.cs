@@ -5,7 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Hipcall.Sdk.Client.Models
+namespace Hipcall.Sdk.Deneme.Client.Models
 {
     /// <summary>
     /// Record an attribution touch for an existing Contact or Company.Exactly one of `contactId` / `companyId` must be set (server returns`422` if both or neither are present). An optional `visitorId` letsthe server stitch any previously-recorded anonymous tracker events forthat visitor onto the subject.
@@ -20,19 +20,19 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>Contact ID. Mutually exclusive with `companyId`.</summary>
         public int? ContactId { get; set; }
         /// <summary>Device class the touch was recorded on.</summary>
-        public global::Hipcall.Sdk.Client.Models.AttributionRequestSchema_device? Device { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.AttributionRequestSchema_device? Device { get; set; }
         /// <summary>20-field marketing-attribution source map (HighLevel parity). Only `url` is required; the rest are optional and represent UTM params, click IDs, click cookies, and PII (`ip`, `userAgent`) that the server may drop if `consent` is false.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Hipcall.Sdk.Client.Models.AttributionSourceSchema? Source { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.AttributionSourceSchema? Source { get; set; }
 #nullable restore
 #else
-        public global::Hipcall.Sdk.Client.Models.AttributionSourceSchema Source { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.AttributionSourceSchema Source { get; set; }
 #endif
         /// <summary>Optional `hc_visitor_id` cookie value from the tracker. If supplied, the server reparents any anonymous events for this visitor onto the subject.</summary>
         public Guid? VisitorId { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Hipcall.Sdk.Client.Models.AttributionRequestSchema"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Hipcall.Sdk.Deneme.Client.Models.AttributionRequestSchema"/> and sets the default values.
         /// </summary>
         public AttributionRequestSchema()
         {
@@ -41,12 +41,12 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Hipcall.Sdk.Client.Models.AttributionRequestSchema"/></returns>
+        /// <returns>A <see cref="global::Hipcall.Sdk.Deneme.Client.Models.AttributionRequestSchema"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Hipcall.Sdk.Client.Models.AttributionRequestSchema CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Hipcall.Sdk.Deneme.Client.Models.AttributionRequestSchema CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Hipcall.Sdk.Client.Models.AttributionRequestSchema();
+            return new global::Hipcall.Sdk.Deneme.Client.Models.AttributionRequestSchema();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -59,8 +59,8 @@ namespace Hipcall.Sdk.Client.Models
                 { "companyId", n => { CompanyId = n.GetIntValue(); } },
                 { "consent", n => { Consent = n.GetBoolValue(); } },
                 { "contactId", n => { ContactId = n.GetIntValue(); } },
-                { "device", n => { Device = n.GetEnumValue<global::Hipcall.Sdk.Client.Models.AttributionRequestSchema_device>(); } },
-                { "source", n => { Source = n.GetObjectValue<global::Hipcall.Sdk.Client.Models.AttributionSourceSchema>(global::Hipcall.Sdk.Client.Models.AttributionSourceSchema.CreateFromDiscriminatorValue); } },
+                { "device", n => { Device = n.GetEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.AttributionRequestSchema_device>(); } },
+                { "source", n => { Source = n.GetObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.AttributionSourceSchema>(global::Hipcall.Sdk.Deneme.Client.Models.AttributionSourceSchema.CreateFromDiscriminatorValue); } },
                 { "visitorId", n => { VisitorId = n.GetGuidValue(); } },
             };
         }
@@ -74,8 +74,8 @@ namespace Hipcall.Sdk.Client.Models
             writer.WriteIntValue("companyId", CompanyId);
             writer.WriteBoolValue("consent", Consent);
             writer.WriteIntValue("contactId", ContactId);
-            writer.WriteEnumValue<global::Hipcall.Sdk.Client.Models.AttributionRequestSchema_device>("device", Device);
-            writer.WriteObjectValue<global::Hipcall.Sdk.Client.Models.AttributionSourceSchema>("source", Source);
+            writer.WriteEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.AttributionRequestSchema_device>("device", Device);
+            writer.WriteObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.AttributionSourceSchema>("source", Source);
             writer.WriteGuidValue("visitorId", VisitorId);
         }
     }

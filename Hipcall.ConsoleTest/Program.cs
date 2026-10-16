@@ -1,6 +1,6 @@
-using Hipcall.Sdk.Authentication;
-using Hipcall.Sdk.Client;
-using Hipcall.Sdk.DependencyInjection;
+using Hipcall.Sdk.Deneme.Authentication;
+using Hipcall.Sdk.Deneme.Client;
+using Hipcall.Sdk.Deneme.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
 
 // 1) Create the service collection and register the Hipcall SDK with dummy settings.

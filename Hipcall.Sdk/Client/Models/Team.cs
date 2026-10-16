@@ -5,7 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Hipcall.Sdk.Client.Models
+namespace Hipcall.Sdk.Deneme.Client.Models
 {
     /// <summary>
     /// A team
@@ -18,7 +18,7 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>Callback</summary>
         public bool? Callback { get; set; }
         /// <summary>There are three options.- `none`:- `email`:- `task`:</summary>
-        public global::Hipcall.Sdk.Client.Models.Team_callback_action? CallbackAction { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.Team_callback_action? CallbackAction { get; set; }
         /// <summary>Callback dtmf</summary>
         public int? CallbackDtmf { get; set; }
         /// <summary>ID</summary>
@@ -46,15 +46,15 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>Say line number in second</summary>
         public int? SayLineNumberInSecond { get; set; }
         /// <summary>There are two options.- `active`:- `passive`:</summary>
-        public global::Hipcall.Sdk.Client.Models.Team_state? State { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.Team_state? State { get; set; }
         /// <summary>How a waiting call is distributed to the team members. There are five options.- `random`: Offers the call to one of the available agents at random.- `less`: Offers the call to the available agent with the least talk time.- `priority`: Offers the call to the first group of agents, and moves on to the next group only while nobody there is available.- `ringall`: Rings every available agent at the same time.- `idle`: Offers the call to the available agent who has gone the longest without one.</summary>
-        public global::Hipcall.Sdk.Client.Models.Team_strategy? Strategy { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.Team_strategy? Strategy { get; set; }
         /// <summary>There are two options.- `all`:- `selected`:</summary>
-        public global::Hipcall.Sdk.Client.Models.Team_user_case? UserCase { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.Team_user_case? UserCase { get; set; }
         /// <summary>Wrap up time</summary>
         public int? WrapUpTime { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Hipcall.Sdk.Client.Models.Team"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Hipcall.Sdk.Deneme.Client.Models.Team"/> and sets the default values.
         /// </summary>
         public Team()
         {
@@ -63,12 +63,12 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Hipcall.Sdk.Client.Models.Team"/></returns>
+        /// <returns>A <see cref="global::Hipcall.Sdk.Deneme.Client.Models.Team"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Hipcall.Sdk.Client.Models.Team CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Hipcall.Sdk.Deneme.Client.Models.Team CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Hipcall.Sdk.Client.Models.Team();
+            return new global::Hipcall.Sdk.Deneme.Client.Models.Team();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,7 +79,7 @@ namespace Hipcall.Sdk.Client.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "callback", n => { Callback = n.GetBoolValue(); } },
-                { "callback_action", n => { CallbackAction = n.GetEnumValue<global::Hipcall.Sdk.Client.Models.Team_callback_action>(); } },
+                { "callback_action", n => { CallbackAction = n.GetEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.Team_callback_action>(); } },
                 { "callback_dtmf", n => { CallbackDtmf = n.GetIntValue(); } },
                 { "id", n => { Id = n.GetIntValue(); } },
                 { "locale", n => { Locale = n.GetStringValue(); } },
@@ -87,9 +87,9 @@ namespace Hipcall.Sdk.Client.Models
                 { "play_announcement", n => { PlayAnnouncement = n.GetBoolValue(); } },
                 { "say_line_number", n => { SayLineNumber = n.GetBoolValue(); } },
                 { "say_line_number_in_second", n => { SayLineNumberInSecond = n.GetIntValue(); } },
-                { "state", n => { State = n.GetEnumValue<global::Hipcall.Sdk.Client.Models.Team_state>(); } },
-                { "strategy", n => { Strategy = n.GetEnumValue<global::Hipcall.Sdk.Client.Models.Team_strategy>(); } },
-                { "user_case", n => { UserCase = n.GetEnumValue<global::Hipcall.Sdk.Client.Models.Team_user_case>(); } },
+                { "state", n => { State = n.GetEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.Team_state>(); } },
+                { "strategy", n => { Strategy = n.GetEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.Team_strategy>(); } },
+                { "user_case", n => { UserCase = n.GetEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.Team_user_case>(); } },
                 { "wrap_up_time", n => { WrapUpTime = n.GetIntValue(); } },
             };
         }
@@ -101,7 +101,7 @@ namespace Hipcall.Sdk.Client.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("callback", Callback);
-            writer.WriteEnumValue<global::Hipcall.Sdk.Client.Models.Team_callback_action>("callback_action", CallbackAction);
+            writer.WriteEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.Team_callback_action>("callback_action", CallbackAction);
             writer.WriteIntValue("callback_dtmf", CallbackDtmf);
             writer.WriteIntValue("id", Id);
             writer.WriteStringValue("locale", Locale);
@@ -109,9 +109,9 @@ namespace Hipcall.Sdk.Client.Models
             writer.WriteBoolValue("play_announcement", PlayAnnouncement);
             writer.WriteBoolValue("say_line_number", SayLineNumber);
             writer.WriteIntValue("say_line_number_in_second", SayLineNumberInSecond);
-            writer.WriteEnumValue<global::Hipcall.Sdk.Client.Models.Team_state>("state", State);
-            writer.WriteEnumValue<global::Hipcall.Sdk.Client.Models.Team_strategy>("strategy", Strategy);
-            writer.WriteEnumValue<global::Hipcall.Sdk.Client.Models.Team_user_case>("user_case", UserCase);
+            writer.WriteEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.Team_state>("state", State);
+            writer.WriteEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.Team_strategy>("strategy", Strategy);
+            writer.WriteEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.Team_user_case>("user_case", UserCase);
             writer.WriteIntValue("wrap_up_time", WrapUpTime);
             writer.WriteAdditionalData(AdditionalData);
         }

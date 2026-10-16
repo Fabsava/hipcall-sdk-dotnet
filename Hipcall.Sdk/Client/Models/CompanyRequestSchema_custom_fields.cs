@@ -5,7 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Hipcall.Sdk.Client.Models
+namespace Hipcall.Sdk.Deneme.Client.Models
 {
     /// <summary>
     /// Custom field values to set, keyed by the definition `slug`.Only the slugs you send are touched; omitted fields keep their currentvalue. Send `null` to clear a field.An unknown slug, or the slug of an inactive definition, returns `422`with the offending slug under `errors.custom_fields` — nothing iswritten. Required definitions must be supplied on create. Discovervalid slugs via `GET /api/v3/companies/custom-fields`.
@@ -16,7 +16,7 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Hipcall.Sdk.Client.Models.CompanyRequestSchema_custom_fields"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Hipcall.Sdk.Deneme.Client.Models.CompanyRequestSchema_custom_fields"/> and sets the default values.
         /// </summary>
         public CompanyRequestSchema_custom_fields()
         {
@@ -25,12 +25,12 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Hipcall.Sdk.Client.Models.CompanyRequestSchema_custom_fields"/></returns>
+        /// <returns>A <see cref="global::Hipcall.Sdk.Deneme.Client.Models.CompanyRequestSchema_custom_fields"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Hipcall.Sdk.Client.Models.CompanyRequestSchema_custom_fields CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Hipcall.Sdk.Deneme.Client.Models.CompanyRequestSchema_custom_fields CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Hipcall.Sdk.Client.Models.CompanyRequestSchema_custom_fields();
+            return new global::Hipcall.Sdk.Deneme.Client.Models.CompanyRequestSchema_custom_fields();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -6,7 +6,7 @@ using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Hipcall.Sdk.Client.Models
+namespace Hipcall.Sdk.Deneme.Client.Models
 {
     /// <summary>
     /// A check the request depends on could not run. Nothing was changed.
@@ -19,7 +19,7 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>The primary error message.</summary>
         public override string Message { get => base.Message; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Hipcall.Sdk.Client.Models.ServiceUnavailable"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Hipcall.Sdk.Deneme.Client.Models.ServiceUnavailable"/> and sets the default values.
         /// </summary>
         public ServiceUnavailable()
         {
@@ -28,12 +28,12 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Hipcall.Sdk.Client.Models.ServiceUnavailable"/></returns>
+        /// <returns>A <see cref="global::Hipcall.Sdk.Deneme.Client.Models.ServiceUnavailable"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Hipcall.Sdk.Client.Models.ServiceUnavailable CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Hipcall.Sdk.Deneme.Client.Models.ServiceUnavailable CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Hipcall.Sdk.Client.Models.ServiceUnavailable();
+            return new global::Hipcall.Sdk.Deneme.Client.Models.ServiceUnavailable();
         }
         /// <summary>
         /// The deserialization information for the current model

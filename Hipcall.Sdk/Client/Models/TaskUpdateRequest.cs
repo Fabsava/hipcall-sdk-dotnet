@@ -5,7 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Hipcall.Sdk.Client.Models
+namespace Hipcall.Sdk.Deneme.Client.Models
 {
     /// <summary>
     /// Update task request parameters
@@ -62,11 +62,11 @@ namespace Hipcall.Sdk.Client.Models
         public string Name { get; set; }
 #endif
         /// <summary>Task priority</summary>
-        public global::Hipcall.Sdk.Client.Models.TaskUpdateRequest_priority? Priority { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.TaskUpdateRequest_priority? Priority { get; set; }
         /// <summary>Task list ID</summary>
         public int? TaskListId { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Hipcall.Sdk.Client.Models.TaskUpdateRequest"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Hipcall.Sdk.Deneme.Client.Models.TaskUpdateRequest"/> and sets the default values.
         /// </summary>
         public TaskUpdateRequest()
         {
@@ -75,12 +75,12 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Hipcall.Sdk.Client.Models.TaskUpdateRequest"/></returns>
+        /// <returns>A <see cref="global::Hipcall.Sdk.Deneme.Client.Models.TaskUpdateRequest"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Hipcall.Sdk.Client.Models.TaskUpdateRequest CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Hipcall.Sdk.Deneme.Client.Models.TaskUpdateRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Hipcall.Sdk.Client.Models.TaskUpdateRequest();
+            return new global::Hipcall.Sdk.Deneme.Client.Models.TaskUpdateRequest();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -98,7 +98,7 @@ namespace Hipcall.Sdk.Client.Models
                 { "done", n => { Done = n.GetBoolValue(); } },
                 { "due_date", n => { DueDate = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "priority", n => { Priority = n.GetEnumValue<global::Hipcall.Sdk.Client.Models.TaskUpdateRequest_priority>(); } },
+                { "priority", n => { Priority = n.GetEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.TaskUpdateRequest_priority>(); } },
                 { "task_list_id", n => { TaskListId = n.GetIntValue(); } },
             };
         }
@@ -117,7 +117,7 @@ namespace Hipcall.Sdk.Client.Models
             writer.WriteBoolValue("done", Done);
             writer.WriteDateTimeOffsetValue("due_date", DueDate);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Hipcall.Sdk.Client.Models.TaskUpdateRequest_priority>("priority", Priority);
+            writer.WriteEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.TaskUpdateRequest_priority>("priority", Priority);
             writer.WriteIntValue("task_list_id", TaskListId);
             writer.WriteAdditionalData(AdditionalData);
         }

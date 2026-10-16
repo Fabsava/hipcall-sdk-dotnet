@@ -5,7 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Hipcall.Sdk.Client.Models
+namespace Hipcall.Sdk.Deneme.Client.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
@@ -17,10 +17,10 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>Which contact-centre fields are enabled for this account. These are field-visibility settings, changed only in the portal — they are not writable through the API. Every key is always present; defaults are applied for accounts that never changed a setting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_account_contact_center? ContactCenter { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_account_contact_center? ContactCenter { get; set; }
 #nullable restore
 #else
-        public global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_account_contact_center ContactCenter { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_account_contact_center ContactCenter { get; set; }
 #endif
         /// <summary>Account creation date</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -35,10 +35,10 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>Account limits</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_account_limits? Limits { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_account_limits? Limits { get; set; }
 #nullable restore
 #else
-        public global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_account_limits Limits { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_account_limits Limits { get; set; }
 #endif
         /// <summary>Account locale</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -59,10 +59,10 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>Account-wide phone settings. Every key is always present; defaults are applied for accounts that never changed a setting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_account_options? Options { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_account_options? Options { get; set; }
 #nullable restore
 #else
-        public global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_account_options Options { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_account_options Options { get; set; }
 #endif
         /// <summary>Account slug</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -89,7 +89,7 @@ namespace Hipcall.Sdk.Client.Models
         public string Timezone { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_account"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_account"/> and sets the default values.
         /// </summary>
         public ProfileResponseSchema_data_account()
         {
@@ -98,12 +98,12 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_account"/></returns>
+        /// <returns>A <see cref="global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_account"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_account CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_account CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_account();
+            return new global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_account();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -113,13 +113,13 @@ namespace Hipcall.Sdk.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "contact_center", n => { ContactCenter = n.GetObjectValue<global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_account_contact_center>(global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_account_contact_center.CreateFromDiscriminatorValue); } },
+                { "contact_center", n => { ContactCenter = n.GetObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_account_contact_center>(global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_account_contact_center.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetIntValue(); } },
-                { "limits", n => { Limits = n.GetObjectValue<global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_account_limits>(global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_account_limits.CreateFromDiscriminatorValue); } },
+                { "limits", n => { Limits = n.GetObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_account_limits>(global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_account_limits.CreateFromDiscriminatorValue); } },
                 { "locale", n => { Locale = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "options", n => { Options = n.GetObjectValue<global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_account_options>(global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_account_options.CreateFromDiscriminatorValue); } },
+                { "options", n => { Options = n.GetObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_account_options>(global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_account_options.CreateFromDiscriminatorValue); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
                 { "timezone", n => { Timezone = n.GetStringValue(); } },
@@ -132,13 +132,13 @@ namespace Hipcall.Sdk.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_account_contact_center>("contact_center", ContactCenter);
+            writer.WriteObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_account_contact_center>("contact_center", ContactCenter);
             writer.WriteStringValue("created_at", CreatedAt);
             writer.WriteIntValue("id", Id);
-            writer.WriteObjectValue<global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_account_limits>("limits", Limits);
+            writer.WriteObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_account_limits>("limits", Limits);
             writer.WriteStringValue("locale", Locale);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Hipcall.Sdk.Client.Models.ProfileResponseSchema_data_account_options>("options", Options);
+            writer.WriteObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.ProfileResponseSchema_data_account_options>("options", Options);
             writer.WriteStringValue("slug", Slug);
             writer.WriteStringValue("status", Status);
             writer.WriteStringValue("timezone", Timezone);

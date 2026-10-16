@@ -5,7 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Hipcall.Sdk.Client.Models
+namespace Hipcall.Sdk.Deneme.Client.Models
 {
     /// <summary>
     /// Response after recording an attribution touch.
@@ -24,7 +24,7 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>Anonymous events reparented onto the subject. `0` if `visitorId` was not supplied or no anonymous events existed.</summary>
         public int? LinkedEvents { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Hipcall.Sdk.Client.Models.AttributionResponseSchema"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Hipcall.Sdk.Deneme.Client.Models.AttributionResponseSchema"/> and sets the default values.
         /// </summary>
         public AttributionResponseSchema()
         {
@@ -33,12 +33,12 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Hipcall.Sdk.Client.Models.AttributionResponseSchema"/></returns>
+        /// <returns>A <see cref="global::Hipcall.Sdk.Deneme.Client.Models.AttributionResponseSchema"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Hipcall.Sdk.Client.Models.AttributionResponseSchema CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Hipcall.Sdk.Deneme.Client.Models.AttributionResponseSchema CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Hipcall.Sdk.Client.Models.AttributionResponseSchema();
+            return new global::Hipcall.Sdk.Deneme.Client.Models.AttributionResponseSchema();
         }
         /// <summary>
         /// The deserialization information for the current model

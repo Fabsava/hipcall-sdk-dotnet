@@ -5,7 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Hipcall.Sdk.Client.Models
+namespace Hipcall.Sdk.Deneme.Client.Models
 {
     /// <summary>
     /// POST body for starting an outbound call
@@ -18,15 +18,15 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>Start an outbound call and bridge it to the extension.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Hipcall.Sdk.Client.Models.OutboundCallExtension? Data { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.OutboundCallExtension? Data { get; set; }
 #nullable restore
 #else
-        public global::Hipcall.Sdk.Client.Models.OutboundCallExtension Data { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.OutboundCallExtension Data { get; set; }
 #endif
         /// <summary>When true, start the extension&apos;s flow only after the callee answers. When false, start it on the carrier&apos;s early media. Omit it for the default of the extension type: wait for external manager, smart IVR, greeting, voicemail and conference extensions; don&apos;t wait for the others. A call that waits for answer and is never answered produces no CDR and no call events. No effect when ring_user_first is true.</summary>
         public bool? WaitForAnswer { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Hipcall.Sdk.Client.Models.OutboundCallExtensionRequestSchema"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Hipcall.Sdk.Deneme.Client.Models.OutboundCallExtensionRequestSchema"/> and sets the default values.
         /// </summary>
         public OutboundCallExtensionRequestSchema()
         {
@@ -35,12 +35,12 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Hipcall.Sdk.Client.Models.OutboundCallExtensionRequestSchema"/></returns>
+        /// <returns>A <see cref="global::Hipcall.Sdk.Deneme.Client.Models.OutboundCallExtensionRequestSchema"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Hipcall.Sdk.Client.Models.OutboundCallExtensionRequestSchema CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Hipcall.Sdk.Deneme.Client.Models.OutboundCallExtensionRequestSchema CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Hipcall.Sdk.Client.Models.OutboundCallExtensionRequestSchema();
+            return new global::Hipcall.Sdk.Deneme.Client.Models.OutboundCallExtensionRequestSchema();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -50,7 +50,7 @@ namespace Hipcall.Sdk.Client.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "data", n => { Data = n.GetObjectValue<global::Hipcall.Sdk.Client.Models.OutboundCallExtension>(global::Hipcall.Sdk.Client.Models.OutboundCallExtension.CreateFromDiscriminatorValue); } },
+                { "data", n => { Data = n.GetObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.OutboundCallExtension>(global::Hipcall.Sdk.Deneme.Client.Models.OutboundCallExtension.CreateFromDiscriminatorValue); } },
                 { "wait_for_answer", n => { WaitForAnswer = n.GetBoolValue(); } },
             };
         }
@@ -61,7 +61,7 @@ namespace Hipcall.Sdk.Client.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Hipcall.Sdk.Client.Models.OutboundCallExtension>("data", Data);
+            writer.WriteObjectValue<global::Hipcall.Sdk.Deneme.Client.Models.OutboundCallExtension>("data", Data);
             writer.WriteBoolValue("wait_for_answer", WaitForAnswer);
             writer.WriteAdditionalData(AdditionalData);
         }

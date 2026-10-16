@@ -5,7 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Hipcall.Sdk.Client.Models
+namespace Hipcall.Sdk.Deneme.Client.Models
 {
     /// <summary>
     /// Changes settings on an already-registered device. Only the fields sent are written.
@@ -18,7 +18,7 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>Enable or disable do not disturb mode for this device. When enabled, push notifications will not be sent to this device.</summary>
         public bool? DoNotDisturb { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Hipcall.Sdk.Client.Models.MobileDeviceUpdateRequest"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Hipcall.Sdk.Deneme.Client.Models.MobileDeviceUpdateRequest"/> and sets the default values.
         /// </summary>
         public MobileDeviceUpdateRequest()
         {
@@ -27,12 +27,12 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Hipcall.Sdk.Client.Models.MobileDeviceUpdateRequest"/></returns>
+        /// <returns>A <see cref="global::Hipcall.Sdk.Deneme.Client.Models.MobileDeviceUpdateRequest"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Hipcall.Sdk.Client.Models.MobileDeviceUpdateRequest CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Hipcall.Sdk.Deneme.Client.Models.MobileDeviceUpdateRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Hipcall.Sdk.Client.Models.MobileDeviceUpdateRequest();
+            return new global::Hipcall.Sdk.Deneme.Client.Models.MobileDeviceUpdateRequest();
         }
         /// <summary>
         /// The deserialization information for the current model

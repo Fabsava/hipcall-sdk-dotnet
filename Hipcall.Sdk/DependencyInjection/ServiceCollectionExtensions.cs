@@ -1,13 +1,13 @@
-using Hipcall.Sdk.Authentication;
-using Hipcall.Sdk.Client;
-using Hipcall.Sdk.Configuration;
+using Hipcall.Sdk.Deneme.Authentication;
+using Hipcall.Sdk.Deneme.Client;
+using Hipcall.Sdk.Deneme.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Options;
 using Microsoft.Kiota.Abstractions.Authentication;
 using Microsoft.Kiota.Http.HttpClientLibrary;
 
-namespace Hipcall.Sdk.DependencyInjection;
+namespace Hipcall.Sdk.Deneme.DependencyInjection;
 
 public static class ServiceCollectionExtensions
 {

@@ -5,7 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Hipcall.Sdk.Client.Models
+namespace Hipcall.Sdk.Deneme.Client.Models
 {
     /// <summary>
     /// PATCH body for updating a conversation. All fields are optional;include only the ones you want to change. At least one updatablefield must be provided.- `assignee_id`: integer to reassign to a teammate, or `null` to unassign.- `contact_id`: integer to link a contact, or `null` to unlink.- `company_id`: integer to link a company, or `null` to unlink.- `status`: one of `created`, `on_contact`, `on_us`, `closed`. Setting  `closed` automatically sets `closed_at`; changing to any other status  clears `closed_at`.
@@ -22,9 +22,9 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>Contact ID (null to unlink)</summary>
         public int? ContactId { get; set; }
         /// <summary>Conversation status</summary>
-        public global::Hipcall.Sdk.Client.Models.ConversationUpdateRequestSchema_status? Status { get; set; }
+        public global::Hipcall.Sdk.Deneme.Client.Models.ConversationUpdateRequestSchema_status? Status { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Hipcall.Sdk.Client.Models.ConversationUpdateRequestSchema"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Hipcall.Sdk.Deneme.Client.Models.ConversationUpdateRequestSchema"/> and sets the default values.
         /// </summary>
         public ConversationUpdateRequestSchema()
         {
@@ -33,12 +33,12 @@ namespace Hipcall.Sdk.Client.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Hipcall.Sdk.Client.Models.ConversationUpdateRequestSchema"/></returns>
+        /// <returns>A <see cref="global::Hipcall.Sdk.Deneme.Client.Models.ConversationUpdateRequestSchema"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Hipcall.Sdk.Client.Models.ConversationUpdateRequestSchema CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Hipcall.Sdk.Deneme.Client.Models.ConversationUpdateRequestSchema CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Hipcall.Sdk.Client.Models.ConversationUpdateRequestSchema();
+            return new global::Hipcall.Sdk.Deneme.Client.Models.ConversationUpdateRequestSchema();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -51,7 +51,7 @@ namespace Hipcall.Sdk.Client.Models
                 { "assignee_id", n => { AssigneeId = n.GetIntValue(); } },
                 { "company_id", n => { CompanyId = n.GetIntValue(); } },
                 { "contact_id", n => { ContactId = n.GetIntValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Hipcall.Sdk.Client.Models.ConversationUpdateRequestSchema_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.ConversationUpdateRequestSchema_status>(); } },
             };
         }
         /// <summary>
@@ -64,7 +64,7 @@ namespace Hipcall.Sdk.Client.Models
             writer.WriteIntValue("assignee_id", AssigneeId);
             writer.WriteIntValue("company_id", CompanyId);
             writer.WriteIntValue("contact_id", ContactId);
-            writer.WriteEnumValue<global::Hipcall.Sdk.Client.Models.ConversationUpdateRequestSchema_status>("status", Status);
+            writer.WriteEnumValue<global::Hipcall.Sdk.Deneme.Client.Models.ConversationUpdateRequestSchema_status>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
