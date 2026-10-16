@@ -28,5 +28,11 @@ jobs:
     - name: Projeyi Paketle
       run: dotnet pack Hipcall.Sdk/Hipcall.Sdk.csproj -c Release --no-build -o out
 
+    - name: NuGet Login (Trusted Publisher OIDC)
+      id: login
+      uses: NuGet/login@v1
+      with:
+        user: Fabsava
+
     - name: NuGet'e Gonder (Trusted Publisher)
-      run: dotnet nuget push "out/*.nupkg" --source https://api.nuget.org/v3/index.json
+      run: dotnet nuget push "out/*.nupkg" --source https://api.nuget.org/v3/index.json --api-key ${{ steps.login.outputs.NUGET_API_KEY }} --skip-duplicate
