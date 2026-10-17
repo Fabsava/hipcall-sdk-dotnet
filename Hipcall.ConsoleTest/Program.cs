@@ -3,41 +3,49 @@ using Hipcall.Sdk.Deneme.Client;
 using Hipcall.Sdk.Deneme.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
 
-// 1) Create the service collection and register the Hipcall SDK with dummy settings.
+Console.WriteLine("=== Hipcall SDK Başlatma Örnekleri ===");
+
+// ---------------------------------------------------------------------------------------------
+// YÖNTEM 1: Sabit / Kalıcı API Token ile Kullanım (Dependency Injection ile)
+// Hipcall Web Panel: Ayarlar -> Geliştirici -> API Tokenları kısmından aldığınız kalıcı token.
+// Sayfa yenilense de, servis yeniden başlasa da tekrar giriş yapmanız gerekmez.
+// ---------------------------------------------------------------------------------------------
 var services = new ServiceCollection();
 
-services.AddHipcallSdk(options =>
-{
-    options.ClientId = "dummy-client-id";
-    options.ClientSecret = "dummy-client-secret";
-    options.RedirectUri = "https://localhost:5001/callback";
-});
+// İster doğrudan token vererek:
+services.AddHipcallSdk("demo_api_token_here");
 
-// 2) Build the container.
+// İsterseniz options üzerinden:
+// services.AddHipcallSdk(options =>
+// {
+//     options.ApiToken = "demo_api_token_here";
+// });
+
 using var serviceProvider = services.BuildServiceProvider();
-
-// HipcallClient is registered as Scoped, so resolve it from a scope.
 using var scope = serviceProvider.CreateScope();
+var diClient = scope.ServiceProvider.GetRequiredService<HipcallClient>();
+Console.WriteLine("[1] DI üzerinden kalıcı API Token ile HipcallClient başarıyla başlatıldı!");
 
-// 3) Resolve HipcallClient from DI.
-var client = scope.ServiceProvider.GetRequiredService<HipcallClient>();
-
-Console.WriteLine("Hipcall SDK başarıyla başlatıldı ve DI konteynerinden çekildi!");
 
 // ---------------------------------------------------------------------------------------------
-// Example GET request (kept commented out: it needs real credentials and a stored token).
-//
-// Real flow:
-//   1. Send the user to Hipcall's /oauth/authorize URL and receive the `code` on your RedirectUri.
-//   2. Exchange the code for a token and save it in the ITokenStore:
-//
-//      var oauth = scope.ServiceProvider.GetRequiredService<HipcallOAuthClient>();
-//      var tokenStore = scope.ServiceProvider.GetRequiredService<ITokenStore>();
-//      var token = await oauth.ExchangeCodeAsync("<authorization-code>");
-//      await tokenStore.SaveTokenAsync(token);
-//
-//   3. Call the API. The bearer token is added (and refreshed when expired) automatically:
-//
-//      var profile = await client.Api.V3.Profile.GetAsync();
-//      Console.WriteLine($"Merhaba, {profile?.Data?.User?.FullName} ({profile?.Data?.User?.Email})");
+// YÖNTEM 2: DI Olmadan Tek Satırda API Token ile İstemci Oluşturma
+// Konsol uygulamaları, arka plan işleri veya betikler için en hızlı yöntem.
 // ---------------------------------------------------------------------------------------------
+var directClient = HipcallClient.Create("demo_api_token_here");
+Console.WriteLine("[2] DI olmadan doğrudan HipcallClient.Create ile istemci başarıyla oluşturuldu!");
+
+
+// ---------------------------------------------------------------------------------------------
+// YÖNTEM 3: OAuth2 Authorization Code Akışı (Kullanıcı Bazlı Yetkilendirme)
+// Eğer uygulamanız çok kullanıcılı bir SaaS ise ve her kullanıcı kendi Hipcall hesabıyla
+// giriş yapacaksa bu akış kullanılır:
+//
+// services.AddHipcallSdk(options =>
+// {
+//     options.ClientId = "your-client-id";
+//     options.ClientSecret = "your-client-secret";
+//     options.RedirectUri = "https://app.example.com/callback";
+// });
+// ---------------------------------------------------------------------------------------------
+
+Console.WriteLine("Tüm yöntemler hazır ve başarıyla çalıştı!");

@@ -36,9 +36,9 @@ public class HipcallOAuthClient
         {
             ["grant_type"] = "authorization_code",
             ["code"] = code,
-            ["client_id"] = o.ClientId,
-            ["client_secret"] = o.ClientSecret,
-            ["redirect_uri"] = o.RedirectUri,
+            ["client_id"] = o.ClientId ?? string.Empty,
+            ["client_secret"] = o.ClientSecret ?? string.Empty,
+            ["redirect_uri"] = o.RedirectUri ?? string.Empty,
         }, cancellationToken);
     }
 
@@ -54,8 +54,8 @@ public class HipcallOAuthClient
         {
             ["grant_type"] = "refresh_token",
             ["refresh_token"] = refreshToken,
-            ["client_id"] = o.ClientId,
-            ["client_secret"] = o.ClientSecret,
+            ["client_id"] = o.ClientId ?? string.Empty,
+            ["client_secret"] = o.ClientSecret ?? string.Empty,
         }, cancellationToken);
     }
 

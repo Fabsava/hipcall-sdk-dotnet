@@ -9,9 +9,11 @@ Hipcall API V3 ile C# ve .NET projelerinizde tam entegrasyon sağlamak için gel
 ## 🚀 Özellikler
 
 * **Tam API Kapsamı:** Hipcall API V3 üzerindeki tüm endpointler ve veri modelleri desteklenir.
+* **Kalıcı API Token Desteği:** Hipcall web panelinden alacağınız sabit API token ile sayfa yenilense de oturum kaybetmeden kalıcı bağlantı.
+* **OAuth2 Flow Desteği:** Çok kullanıcılı uygulamalar için `authorization_code` ve `refresh_token` akışlarını otomatik yöneten token altyapısı.
 * **Modern Mimari:** Microsoft Kiota ile üretilmiş, standartlara uygun HTTP istemcisi.
-* **Otomatik Kimlik Doğrulama:** OAuth2 `authorization_code` ve `refresh_token` akışlarını otomatik yöneten token altyapısı.
 * **Dependency Injection (DI):** ASP.NET Core ve modern Worker Service projeleri için `IServiceCollection` entegrasyonu.
+* **Hızlı Kurulum (Non-DI):** Tek satırda `HipcallClient.Create("token")` ile istemci oluşturma imkanı.
 * **Genişletilebilir Token Saklama:** `ITokenStore` arayüzü ile token'ları bellek, veritabanı veya dosyada saklama özgürlüğü.
 
 ## 📦 Kurulum
@@ -30,9 +32,49 @@ Install-Package Hipcall.Sdk.Deneme
 
 ## 🛠️ Hızlı Başlangıç (Quick Start)
 
-### 1. Servisleri Yapılandırma (Dependency Injection)
+SDK iki farklı kimlik doğrulama yöntemini destekler:
+1. **API Token (Önerilen - Kalıcı & Basit):** Hipcall web panelinden (`Ayarlar -> Geliştirici -> API Tokenları`) üretilen kalıcı token. Sayfa yenilense veya sunucu yeniden başlasa bile tekrar giriş yapmanız gerekmez.
+2. **OAuth2 Authorization Code:** Çok kullanıcılı SaaS uygulamalarında her kullanıcının kendi Hipcall hesabıyla yetkilendirilmesi gereken senaryolar için.
 
-`Program.cs` veya `Startup.cs` dosyanızda Hipcall SDK'sini servislere ekleyin:
+---
+
+### Yöntem 1: Kalıcı API Token ile Kullanım (En Pratik)
+
+#### A) Dependency Injection ile (ASP.NET Core / Worker Service)
+`Program.cs` dosyanızda tek satırla ekleyin:
+
+```csharp
+using Hipcall.Sdk.Deneme.DependencyInjection;
+
+var builder = WebApplication.CreateBuilder(args);
+
+// Doğrudan token vererek veya Configuration üzerinden:
+builder.Services.AddHipcallSdk(builder.Configuration["Hipcall:ApiToken"]!);
+
+// veya options üzerinden:
+// builder.Services.AddHipcallSdk(options => {
+//     options.ApiToken = builder.Configuration["Hipcall:ApiToken"];
+// });
+
+var app = builder.Build();
+```
+
+#### B) DI Olmadan (Konsol / Script / Arka Plan Görevleri)
+```csharp
+using Hipcall.Sdk.Deneme.Client;
+
+// Tek satırda istemciyi oluşturun
+var client = HipcallClient.Create("your_api_token_here");
+
+var profile = await client.Api.V3.Profile.GetAsync();
+Console.WriteLine($"Kullanıcı: {profile?.Data?.User?.FullName}");
+```
+
+---
+
+### Yöntem 2: OAuth2 Akışı ile Kullanım
+
+`Program.cs` dosyanızda OAuth2 ayarlarınızı girin:
 
 ```csharp
 using Hipcall.Sdk.Deneme.DependencyInjection;
@@ -49,9 +91,28 @@ builder.Services.AddHipcallSdk(options =>
 var app = builder.Build();
 ```
 
-### 2. İstemciyi Kullanma
+OAuth2 kullanıldığında, varsayılan olarak token'lar bellekte (`InMemoryTokenStore`) tutulur. Sayfa yenilemelerinde veya uygulama yeniden başladığında oturumun kaybolmaması için kendi `ITokenStore` uygulamanızı (EF Core, Redis vb.) servislere ekleyebilirsiniz:
 
-SDK servislere eklendikten sonra, herhangi bir sınıfınızda `HipcallClient` nesnesini Dependency Injection (Constructor) üzerinden çağırarak API'ye istek atabilirsiniz:
+```csharp
+using Hipcall.Sdk.Deneme.Authentication;
+
+public class MyDatabaseTokenStore : ITokenStore
+{
+    public Task SaveTokenAsync(OAuthTokenResponse token) { /* DB'ye kaydet */ return Task.CompletedTask; }
+    public Task<OAuthTokenResponse?> GetTokenAsync() { /* DB'den oku */ return Task.FromResult<OAuthTokenResponse?>(null); }
+    public Task DeleteTokenAsync() { /* DB'den sil */ return Task.CompletedTask; }
+}
+
+// Program.cs
+builder.Services.AddScoped<ITokenStore, MyDatabaseTokenStore>();
+builder.Services.AddHipcallSdk(options => { ... });
+```
+
+---
+
+### İstemciyi Controller / Servis İçinde Kullanma
+
+İstemciyi Dependency Injection üzerinden çekip doğrudan API çağrısı yapabilirsiniz:
 
 ```csharp
 using Hipcall.Sdk.Deneme.Client;
@@ -73,7 +134,6 @@ public class CallController : ControllerBase
     {
         try
         {
-            // İstemci, arka planda token yönetimini otomatik yapar
             var profile = await _hipcallClient.Api.V3.Profile.GetAsync();
             return Ok(profile);
         }
@@ -83,26 +143,6 @@ public class CallController : ControllerBase
         }
     }
 }
-```
-
-## 🔒 Token Yönetimi
-
-SDK, varsayılan olarak token'ları bellekte (RAM) tutan `InMemoryTokenStore` kullanır. Üretim (Production) ortamında token'ları veritabanınızda veya Redis'te saklamak için kendi `ITokenStore` uygulamanızı yazıp servislere ekleyebilirsiniz:
-
-```csharp
-using Hipcall.Sdk.Deneme.Authentication;
-
-public class MyDatabaseTokenStore : ITokenStore
-{
-    // Kendi veritabanı kaydetme/okuma mantığınızı buraya yazın
-    public Task SaveTokenAsync(OAuthTokenResponse token) => Task.CompletedTask;
-    public Task<OAuthTokenResponse?> GetTokenAsync() => Task.FromResult<OAuthTokenResponse?>(null);
-    public Task DeleteTokenAsync() => Task.CompletedTask;
-}
-
-// Program.cs
-builder.Services.AddScoped<ITokenStore, MyDatabaseTokenStore>();
-builder.Services.AddHipcallSdk(options => { ... });
 ```
 
 ## 📄 Lisans

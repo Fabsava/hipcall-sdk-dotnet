@@ -15,6 +15,17 @@ public static class ServiceCollectionExtensions
     public const string ApiHttpClientName = "Hipcall.Api";
 
     /// <summary>
+    /// Registers the Hipcall SDK using a permanent static API token.
+    /// </summary>
+    public static IServiceCollection AddHipcallSdk(
+        this IServiceCollection services,
+        string apiToken)
+    {
+        ArgumentException.ThrowIfNullOrWhiteSpace(apiToken);
+        return services.AddHipcallSdk(options => options.ApiToken = apiToken);
+    }
+
+    /// <summary>
     /// Registers the Hipcall SDK: options, a default <see cref="InMemoryTokenStore"/>
     /// (only if no <see cref="ITokenStore"/> is registered yet), <see cref="HipcallOAuthClient"/>,
     /// <see cref="HipcallTokenProvider"/> and the Kiota-generated <see cref="HipcallClient"/>.
@@ -33,8 +44,8 @@ public static class ServiceCollectionExtensions
         services.AddOptions<HipcallClientOptions>()
             .Configure(configureOptions)
             .Validate(
-                o => !string.IsNullOrWhiteSpace(o.ClientId) && !string.IsNullOrWhiteSpace(o.ClientSecret),
-                "HipcallClientOptions.ClientId and ClientSecret must be set.");
+                o => !string.IsNullOrWhiteSpace(o.ApiToken) || (!string.IsNullOrWhiteSpace(o.ClientId) && !string.IsNullOrWhiteSpace(o.ClientSecret)),
+                "Either HipcallClientOptions.ApiToken or (ClientId and ClientSecret) must be set.");
 
         // Skipped when the application already registered its own ITokenStore.
         services.TryAddSingleton<ITokenStore, InMemoryTokenStore>();
